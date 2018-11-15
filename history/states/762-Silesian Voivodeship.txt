@@ -11,11 +11,12 @@ state={
 	}
 	state_category = city
 	history={
-		owner = POL
+		owner = GER
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 1
 		}
 		add_core_of = POL
+		add_core_of = GER        
 	}
 }
