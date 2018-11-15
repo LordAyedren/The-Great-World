@@ -10,7 +10,7 @@ state={
 	state_category = town
 
 	history={
-		owner = CZE
+		owner = AUS
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 2
@@ -19,7 +19,7 @@ state={
 			6573 1
 		}
 		add_core_of = CZE
-		add_claim_by = HUN
+		add_claim_by = AUS
 
 		1939.3.14 = {
 			owner = HUN
