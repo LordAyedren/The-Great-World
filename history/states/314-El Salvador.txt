@@ -6,28 +6,29 @@ state=
 	resources={
 		chromium=1 # was: 1
 	}
-	
+
 	state_category = town
-	
+
 	history=
 	{
-		owner = ELS
+		owner = NIC
 		buildings = {
 			infrastructure = 4
 			arms_factory = 1
-			industrial_complex = 2 
+			industrial_complex = 2
 			air_base = 1
 			12823 = {
 				naval_base = 1
 			}
 		}
 		add_core_of = ELS
+        add_core_of = NIC
 		victory_points = {
 			12823 3
 		}
 
 	}
 	provinces={
-		12823 13093 
+		12823 13093
 	}
 }
