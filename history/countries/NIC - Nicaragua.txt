@@ -94,7 +94,7 @@ create_country_leader = {
 	desc = "POLITICS_WILLIAM_WALKER_III_DESC"
 	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	expire = "1965.1.1"
-	ideology = fascism
+	ideology = fascism_ideology
 	traits = {
 		#
 	}
@@ -134,7 +134,7 @@ create_country_leader = {
 		desc = "POLITICS_WILLIAM_WALKER_III_DESC"
 		picture = "GFX_portrait_nicaragua_portrait_anastasio_somoza_garcia"
 		expire = "1965.1.1"
-		ideology = fascism
+		ideology = fascism_ideology
 		traits = {
 			#
 		}
