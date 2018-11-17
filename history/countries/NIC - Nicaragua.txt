@@ -91,7 +91,7 @@ set_politics = {
 
 create_country_leader = {
 	name = "William Walker III"
-	desc = "POLITICS_JUAN_BAUTISTA_SACASA_DESC"
+	desc = "POLITICS_WILLIAM_WALKER_III_DESC"
 	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	expire = "1965.1.1"
 	ideology = despotism
@@ -130,8 +130,8 @@ create_country_leader = {
 
 }
 	create_country_leader = {
-		name = "William Walker IV"
-		desc = "POLITICS_ANASTASIO_SOMOZA_GARCIA_DESC"
+		name = "William Walker III"
+		desc = "POLITICS_WILLIAM_WALKER_III_DESC"
 		picture = "GFX_portrait_nicaragua_portrait_anastasio_somoza_garcia"
 		expire = "1965.1.1"
 		ideology = despotism
