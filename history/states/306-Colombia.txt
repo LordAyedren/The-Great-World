@@ -3,11 +3,11 @@ state={
 	id=306
 	name="STATE_306" # Cundinamarca
 	manpower = 4953049
-	
+
 	state_category = city
-	
+
 	history={
-		owner = COL
+		owner = VEN
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
@@ -15,6 +15,7 @@ state={
 			air_base = 2
 		}
 		add_core_of = COL
+        add_core_of = VEN
 		victory_points = {
 			10747 10
 		}
@@ -22,6 +23,6 @@ state={
 	}
 
 	provinces={
-		2079 7936 7991 7993 10747 10790 10846 
+		2079 7936 7991 7993 10747 10790 10846
 	}
 }

@@ -6,11 +6,11 @@ state={
 	resources={
 		oil=2 # was: 2
 	}
-	
+
 	state_category = city
 
 	history={
-		owner = ECU
+		owner = VEN
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
@@ -21,6 +21,7 @@ state={
 			}
 		}
 		add_core_of = ECU
+        add_core_of = VEN
 		victory_points = {
 			12798 5
 		}
@@ -31,6 +32,6 @@ state={
 	}
 
 	provinces={
-		5051 5120 8047 8075 8252 10888 11020 12798 
+		5051 5120 8047 8075 8252 10888 11020 12798
 	}
 }
