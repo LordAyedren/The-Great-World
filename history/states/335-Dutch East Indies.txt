@@ -12,7 +12,7 @@ state={
 	}
 
 	history={
-		owner = INS
+		owner = GER
 		add_core_of = INS
 		victory_points = {
 			7381 5
