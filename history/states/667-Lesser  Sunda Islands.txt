@@ -6,7 +6,7 @@ state={
 	}
 
 	history={
-		owner = INS
+		owner = GER
 		add_core_of = INS
 		buildings = {
 			infrastructure = 3
