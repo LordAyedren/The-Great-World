@@ -96,8 +96,8 @@ set_politics = {
 set_stability = 0.75
 
 create_country_leader = {
-	name = "Lázaro Cárdenas"
-	desc = "POLITICS_LAZARO_CARDENAS_DESC"
+	name = "Portfólio Díaz"
+	desc = "POLITICS_PORTFOLIO_DIAZ_DESC"
 	picture = "Portrait_Mexico_Lazaro_Cardenas.dds"
 	expire = "1965.1.1"
 	ideology = despotism
