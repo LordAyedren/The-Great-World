@@ -82,19 +82,23 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 97
+			popularity = 10
 		}
 
 		fascism = {
-			popularity = 1
+			popularity = 10
 		}
 		
 		communism = {
-			popularity = 2
+			popularity = 10
+		}
+		
+		neutrality = {
+			popularity = 70
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1935.10.22"
 	election_frequency = 48
 	elections_allowed = yes
@@ -103,27 +107,29 @@ set_politics = {
 1939.1.1 = {
 	set_politics = {
 
-		parties = {
-			democratic = { 
-				popularity = 97
-			}
+	parties = {
+		democratic = { 
+			popularity = 10
+		}
 
-			fascism = {
-				popularity = 1
-			}
-			
-			communism = {
-				popularity = 2
-			}
+		fascism = {
+			popularity = 10
 		}
 		
-		ruling_party = democratic
-		last_election = "1939.4.3"
-		election_frequency = 48
-		elections_allowed = yes
+		communism = {
+			popularity = 10
+		}
+		
+		neutrality = {
+			popularity = 70
+		}
 	}
+	
+	ruling_party = neutrality
+	last_election = "1935.10.22"
+	election_frequency = 48
+	elections_allowed = yes
 }
-
 set_convoys = 40
 
 create_country_leader = {
@@ -160,8 +166,8 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Peter Rochegune Munch"
-	desc = "POLITICS_PETER_ROCHEGUNE_MUNCH_DESC"
+	name = "Christian X"
+	desc = "POLITICS_CHRISTIAN_X_DESC"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	expire = "1965.1.1"
 	ideology = centrism
