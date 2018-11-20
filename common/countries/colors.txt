@@ -9,7 +9,7 @@ ENG = {
 	color_ui = rgb { 255 73 121 }
 }
 SOV = {
-	color = rgb { 125 13 24 }
+	color = rgb { 34  139  34 }
 	color_ui = rgb { 163 17 31 }
 }
 SWE = {
@@ -90,7 +90,7 @@ NOR = {
 	color_ui = rgb { 144 92 92 }
 }
 DEN = {
-	color = rgb { 153 116 93 }
+	color = rgb { 139 0 0 }
 	color_ui = rgb { 199 151 121 }
 }
 BUL = {
@@ -198,8 +198,8 @@ NEP = {
 	color_ui = rgb { 198 169 248 }
 }
 NIC = {
-	color = rgb { 146 179 191 }
-	color_ui = rgb { 146 179 191 }
+	color = rgb { 255  165  0 }
+	color_ui = rgb { 255  165  0 }
 }
 NZL = {
 	color = rgb { 152 130 191 }
@@ -464,7 +464,7 @@ DDR = {
     color_ui = rgb { 150 180 120 }
 }
 KOR = {
-	color = rgb { 255  240  195 }
+	color = rgb { 102  178  255 }
 	color_ui = rgb { 255 248 229 }	
 }
 ISR = {
