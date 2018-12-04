@@ -8,7 +8,7 @@ set_war_support = 0.1
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_recon = 1
 	tech_engineers = 1
 	gw_artillery = 1
@@ -24,7 +24,7 @@ set_technology = {
 1939.1.1 = {
 
 	add_political_power = 1198
-	
+
 	#generic focuses
 	complete_national_focus = army_effort
 	complete_national_focus = equipment_effort
@@ -35,7 +35,7 @@ set_technology = {
 	complete_national_focus = industrial_effort
 	complete_national_focus = construction_effort
 	complete_national_focus = production_effort
-	
+
 	oob = "DEN_1939"
 	set_technology = {
 		early_bomber = 1
@@ -81,23 +81,23 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+		democratic = {
 			popularity = 10
 		}
 
 		fascism = {
 			popularity = 10
 		}
-		
+
 		communism = {
 			popularity = 10
 		}
-		
+
 		neutrality = {
 			popularity = 70
 		}
 	}
-	
+
 	ruling_party = neutrality
 	last_election = "1935.10.22"
 	election_frequency = 48
@@ -108,23 +108,23 @@ set_politics = {
 	set_politics = {
 
 	parties = {
-		democratic = { 
+		democratic = {
 			popularity = 10
 		}
 
 		fascism = {
 			popularity = 10
 		}
-		
+
 		communism = {
 			popularity = 10
 		}
-		
+
 		neutrality = {
 			popularity = 70
 		}
 	}
-	
+
 	ruling_party = neutrality
 	last_election = "1935.10.22"
 	election_frequency = 48
@@ -168,7 +168,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Christian X"
 	desc = "POLITICS_CHRISTIAN_X_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
+	picture = "gfx/leaders/DEN/ChristianX.dds"
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
