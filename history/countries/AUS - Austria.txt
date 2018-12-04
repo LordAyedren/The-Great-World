@@ -18,11 +18,11 @@ set_politics = {
 
 	parties = {
 		neutrality = { 
-			popularity = 48
+			popularity = 86
 		}
 
 		fascism = {
-			popularity = 50
+			popularity = 12
 		}
 
 		democratic = {
@@ -43,9 +43,9 @@ set_politics = {
 set_stability = 0.50
 
 create_country_leader = {
-	name = "Kurt Schuschnigg"
-	desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
-	picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
+	name = "Franz Ferdinand"
+	desc = "POLITICS_FRANZ_FERDINAND_DESC"
+	picture = "Portrait_Austria_Franz_Ferdinand.dds"
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
