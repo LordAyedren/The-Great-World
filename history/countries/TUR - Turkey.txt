@@ -85,7 +85,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 10
+			popularity = 0
 		}
 
 		fascism = {
@@ -140,11 +140,10 @@ set_stability = 0.55
 		election_frequency = 48
 		elections_allowed = yes
 	}
-
 	create_country_leader = {
-		name = "Ismet Inönü"
-		desc = "POLITICS_ISMET_INÖNÜ_DESC"
-		picture = "Portrait_Turkey_Ismet_Inonu.dds"
+		name = "Abdülmecid II"
+		desc = "POLITICS_Abdülmecid_II_DESC"
+		picture = "Portrait_Turkey_Abdulmecid_II.dds"
 		expire = "1965.1.1"
 		ideology = despotism
 		traits = {
@@ -158,7 +157,7 @@ set_stability = 0.55
 create_country_leader = {
 	name = "Abdülmecid II"
 	desc = "POLITICS_Abdülmecid_II_DESC"
-	picture = "Portrait_Turkey_Ismet_Inonu.dds"
+	picture = "Portrait_Turkey_Abdulmecid_II.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
@@ -169,7 +168,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Abdülmecid II"
 	desc = "POLITICS_Abdülmecid_II_DESC"
-	picture = "gfx/leaders/TUR/Portrait_Turkey_Mustafa_Kemal_Ataturk.dds"
+	picture = "Portrait_Turkey_Abdulmecid_II.dds"
 	expire = "1938.11.10"
 	ideology = despotism
 	traits = {
