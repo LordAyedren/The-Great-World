@@ -187,7 +187,7 @@ set_politics = {
 	ruling_party = communism
 	last_election = "1932.11.8"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 add_ideas = {
@@ -225,7 +225,7 @@ set_autonomy = {
 	ruling_party = communism
 	last_election = "1936.11.3"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 	}
 }
 
