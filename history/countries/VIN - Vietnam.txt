@@ -44,25 +44,23 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 35
+			popularity = 0
 		}
 
 		fascism = {
-			popularity = 15
+			popularity = 0
 		}
 		
 		communism = {
-			popularity = 15
+			popularity = 100
 		}
 		neutrality = {
-			popularity = 35
-		}
+			popularity = 0	}
 	}
 
-	ruling_party = democratic
-	last_election = "1933.2.16"
+	ruling_party = communism	last_election = "1933.2.16"
 	election_frequency = 36
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 #NOTICE# please watch out for spelling, im using Vietnamese names as they spell them, game might not support these characters!
