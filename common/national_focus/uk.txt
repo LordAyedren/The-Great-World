@@ -1,0 +1,144 @@
+focus_tree = {
+	id = british_focus
+	
+	country = { 
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}
+	
+	reset_on_civilwar = no
+
+	focus = {
+		id = ENG_political_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 9
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = ENG_stay_with_the_status_quo
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ENG_political_effort }
+		x = 3
+		y = 1
+		relative_position_id = ENG_political_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = .8
+			}
+		}
+	}	
+
+	focus = {
+		id = ENG_reinstate_the_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = ENG_political_effort }
+		mutually_exclusive = { focus = ENG_stay_with_the_status_quo}
+		x = -3
+		y = 1
+		relative_position_id = ENG_political_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = .8
+				add_stability = -0.3
+			}
+			set_politics = { ruling_party = neutrality }
+			}
+		}
+
+	focus = {
+		id = ENG_stabalize_the_monarchy
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = ENG_reinstate_the_monarchy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_reinstate_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_stability = 0.2
+				add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_finalizing_the_monarchy
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ENG_stabalize_the_monarchy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_stabalize_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_stability = 0.2
+				add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_colonial_support_for_the_monarchy
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = ENG_finalizing_the_monarchy }
+		x = -3
+		y = 1
+		relative_position_id = ENG_finalizing_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				RAJ = {
+					add_opinion_modifier = { target = ENG modifier = aided_industry }
+				}	
+			}
+		}
+
+	focus = {
+		id = ENG_reclaim_ireland
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ENG_finalizing_the_monarchy }
+		x = 3		
+		y = 1
+		relative_position_id = ENG_finalizing_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = IRE
+			}
+		}	
+		
+
+
+		
+		
+	
