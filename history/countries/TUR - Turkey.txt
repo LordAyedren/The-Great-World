@@ -1,4 +1,4 @@
-﻿capital = 341
+﻿capital = 49
 
 oob = "TUR_1936"
 
