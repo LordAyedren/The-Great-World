@@ -2044,8 +2044,8 @@
  continuous_reduce_training_time_desc:0 "By creating specialized advanced training units within each division, we can deploy even divisions that would previously have been held back to finish training to the front."
  continuous_suppression:0 "Resistance Suppression"
  continuous_suppression_desc:0 "By infiltrating the major resistance groups in occupied territory and turning their leaders, we can significantly reduce the amount of damage they can do."
- continuous_repair:0 "Construction Repair"
- continuous_repair_desc:0 "We will form specialized repair teams from factory and construction workers and centrally control their deployment to improve reconstruction of damaged infrastructure."
+ continuous_repair:0 "ConstructWe will form specialized repair teams from factory and construction ion Repair"
+ continuous_repair_desc:0 "workers and centrally control their deployment to improve reconstruction of damaged infrastructure."
  continuous_tech_share:0 "Technology Sharing"
  continuous_tech_share_desc:0 "We will encourage our research institutes and universities to reach out to their counter parts in allied countries. This will gain us a tech sharing bonus."
  continuous_boost_freedom:0 "Increase Autonomy"
@@ -2053,3 +2053,40 @@
  continuous_restrict_freedom:0 "Suppress Subjects"
  continuous_restrict_freedom_desc:0 "Our colonial subjects have gotten rather silly ideas about things like "self-determination" or "national independence". It is time to disabuse them of these notions."
  unlocks_decision:0 "Unlocks Decision: "
+ 
+ ENG_political_effort:0 "Political Effort"
+ ENG_political_effort_desc:0 "We will begin working on our politics."
+ ENG_stay_with_the_status_quo:0 "Stay With The Status Quo"
+ ENG_stay_with_the_status_quo_desc:0 "We continue to work towards keeping the status quo."
+ ENG_reinstate_the_monarchy:0 "Reinstate The Monarchy"
+ ENG_reinstate_the_monarchy_desc:0 "We are going to reinstate the monarchy into our country."
+ ENG_stabalize_the_monarchy:0 "Stabalize The Monarchy"
+ ENG_stabalize_the_monarchy_desc:0 "We begin to stabilize our country after reinstating the monarchy."
+ ENG_finalizing_the_monarchy:0 "Finalizing The Monarchy"
+ ENG_finalizing_the_monarchy_desc:0 "Finalizing the stability of our monarchy."
+ ENG_reclaim_ireland:0 "Reclaim Ireland"
+ ENG_reclaim_ireland_desc:0 "We need to reclaim ireland, and bring them back into the empire."
+ ENG_abuse_irish_industry_mil:0 "Take Advantage of Irish Military Industry"
+ ENG_abuse_irish_industry_mil_desc:0 "We use the Irish military industry to benefit ourselves."
+ ENG_abuse_irish_industry_civ:0 "Take Advantage of Irish Civilian Industry"
+ ENG_abuse_irish_industry_civ_desc:0 "We use the Irish civilian industry to benefit ourselves."
+ ENG_hire_irish_scientists:0 "Hire Irish Scientists"
+ ENG_hire_irish_scientists_desc:0 "We are hiring scientists from Ireland to help with our industry."
+ ENG_irish_talks:0 "The Irish Question"
+ ENG_irish_talks_desc:0 "What should we do with Ireland?"
+ ENG_occupy_ireland:0 "Occupy Ireland"
+ ENG_occupy_ireland_desc:0 "The Irish don't deserve freedom."
+ ENG_release_ireland:0 "Release Ireland"
+ ENG_release_ireland_desc:0 "The Irish would make a great addition to our colonial collection."
+ ENG_integrate_ireland:0 "Integrate Ireland"
+ ENG_integrate_ireland:0 "Integrating Ireland would give us the most benefits."
+ ENG_recruit_irishmen:0 "Recruit Irishmen"
+ ENG_recruit_irishmen_desc:0 "In exchange for giving the Irish autonomy we need to recruit soldiers."
+
+
+
+
+
+
+
+
