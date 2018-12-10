@@ -118,10 +118,11 @@ focus_tree = {
 				}	
 			}
 		}
+	
 
 	focus = {
 		id = ENG_reclaim_ireland
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = ENG_finalizing_the_monarchy }
 		x = 3		
 		y = 1
@@ -134,9 +135,176 @@ focus_tree = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = IRE
+				}
 			}
-		}	
+		}
+	
+	focus = {
+		id = ENG_integrate_ireland
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ENG_reclaim_ireland }
+		x = -1		
+		y = 1
+		relative_position_id = ENG_reclaim_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_core = 113
+			add_state_core = 135
+			add_state_core = 134
+			}
+		}
+
+		focus = {
+		id = ENG_abuse_irish_industry_mil
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_integrate_ireland }
+		x = 1
+		y = 1
+		relative_position_id = ENG_integrate_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+
 		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 4
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = ENG_abuse_irish_industry_civ
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_integrate_ireland }
+		x = -1
+		y = 1
+		relative_position_id = ENG_integrate_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 4
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+					
+
+
 
 
 		
