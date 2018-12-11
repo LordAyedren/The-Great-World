@@ -10,7 +10,7 @@ set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_recon = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	gw_artillery = 1
 	gwtank = 1
@@ -63,7 +63,7 @@ give_guarantee = URG
 1939.1.1 = {
 
 	add_political_power = 1199
-	
+
 	#adding ministers
 	add_ideas = {
 		USA_robert_taft
@@ -171,19 +171,19 @@ set_convoys = 400
 set_politics = {
 
 	parties = {
-		democratic = { 
+		democratic = {
 			popularity = 15
 		}
 
 		fascism = {
 			popularity = 15
 		}
-		
+
 		communism = {
 			popularity = 70
 		}
 	}
-	
+
 	ruling_party = communism
 	last_election = "1932.11.8"
 	election_frequency = 48
@@ -209,26 +209,26 @@ set_autonomy = {
 
 	set_politics = {
 
-	parties = {
-		democratic = { 
-			popularity = 15
-		}
+    	parties = {
+    		democratic = {
+    			popularity = 15
+    		}
 
-		fascism = {
-			popularity = 15
-		}
-		
-		communism = {
-			popularity = 70
-		}
-		
-	ruling_party = communism
-	last_election = "1936.11.3"
-	election_frequency = 48
-	elections_allowed = no
-	}
+    		fascism = {
+    			popularity = 15
+    		}
+
+    		communism = {
+    			popularity = 70
+    		}
+
+        	ruling_party = communism
+        	last_election = "1936.11.3"
+        	election_frequency = 48
+        	elections_allowed = no
+    	}
+    }
 }
-
 create_country_leader = {
 	name = "Franklin Delano Roosevelt"
 	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
@@ -247,7 +247,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		
+
 	}
 }
 
@@ -258,7 +258,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
-		
+
 	}
 }
 
@@ -268,7 +268,7 @@ create_corps_commander = {
 	traits = {  trickster armor_officer panzer_leader war_hero trait_reckless }
 	skill = 5
 
-	attack_skill = 7 
+	attack_skill = 7
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 4
@@ -456,7 +456,7 @@ create_corps_commander = {
 	picture = "Portrait_USA_William_Hood_Simpson.dds"
 	traits = { infantry_officer }
 	skill = 3
-	
+
 	attack_skill = 2
 	defense_skill = 4
 	planning_skill = 2
@@ -489,7 +489,7 @@ create_corps_commander = {
 	name = "Joseph Stilwell"
 	picture = "Portrait_USA_Joseph_Stilwell.dds"
 	traits = { politically_connected infantry_officer career_officer harsh_leader }
-	skill = 1 
+	skill = 1
 	id = 601
 	attack_skill = 1
 	defense_skill = 1
@@ -658,7 +658,7 @@ create_equipment_variant = {
 }
 
 1939.1.1 = {
-	
+
 	create_equipment_variant = {
 		name = "Salmon Class"
 		type = submarine_2

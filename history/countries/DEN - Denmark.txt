@@ -105,30 +105,31 @@ set_politics = {
 }
 
 1939.1.1 = {
-	set_politics = {
+    	set_politics = {
 
-	parties = {
-		democratic = {
-			popularity = 10
-		}
+    	parties = {
+    		democratic = {
+    			popularity = 10
+    		}
 
-		fascism = {
-			popularity = 10
-		}
+    		fascism = {
+    			popularity = 10
+    		}
 
-		communism = {
-			popularity = 10
-		}
+    		communism = {
+    			popularity = 10
+    		}
 
-		neutrality = {
-			popularity = 70
-		}
-	}
+    		neutrality = {
+    			popularity = 70
+    		}
+    	}
 
-	ruling_party = neutrality
-	last_election = "1935.10.22"
-	election_frequency = 48
-	elections_allowed = no
+    	ruling_party = neutrality
+    	last_election = "1935.10.22"
+    	election_frequency = 48
+    	elections_allowed = no
+    }
 }
 set_convoys = 40
 
@@ -168,7 +169,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Christian X"
 	desc = "POLITICS_CHRISTIAN_X_DESC"
-	picture = "ChristianX.dds"
+	picture = "gfx/leaders/DEN/ChristianX.dds"
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
