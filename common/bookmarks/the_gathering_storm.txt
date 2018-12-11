@@ -21,20 +21,6 @@ bookmarks = {
 				FRA_revise_versailles
 			}
 		}
-		"USA"={
-			history = "USA_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				home_of_the_free
-				great_depression
-				undisturbed_isolation
-			}
-			focuses = {
-				USA_war_plan_black
-				USA_strike_at_the_empire
-				USA_pearl_harbor_gambit
-			}
-		}
 		"ENG"={
 			history = "ENG_GATHERING_STORM_DESC"
 			ideology = democratic
@@ -79,19 +65,6 @@ bookmarks = {
 				GER_ussr_war_goal
 			}
 		}
-		"ITA"={
-			history = "ITA_GATHERING_STORM_DESC"
-			ideology = fascism
-			ideas = {
-				vittoria_mutilata
-				victor_emmanuel
-			}
-			focuses = {
-				ITA_pact_of_steel
-				ITA_spanish_italian_faction
-				ITA_italy_first
-			}
-		}
 		"SOV"={
 			history = "SOV_GATHERING_STORM_DESC"
 			ideology = communism
@@ -105,15 +78,7 @@ bookmarks = {
 				SOV_war_with_uk
 			}
 		}
-
-
-
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC"
-		}
-
         "NIC"={
-            minor = yes
             history = "NIC_GATHERING_STORM_DESC"
             ideology = fascism
             ideas = {
@@ -123,7 +88,66 @@ bookmarks = {
 
             }
         }
+
+        "TUR"={
+			history = "TUR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+
+			}
+		}
+
+
+        "AUS"={
+			history = "AUS_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+        "USA"={
+            minor = yes
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				home_of_the_free
+				great_depression
+				undisturbed_isolation
+			}
+			focuses = {
+				USA_war_plan_black
+				USA_strike_at_the_empire
+				USA_pearl_harbor_gambit
+			}
+		}
+
+        "ITA"={
+            minor = yes
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				vittoria_mutilata
+				victor_emmanuel
+			}
+			focuses = {
+				ITA_pact_of_steel
+				ITA_spanish_italian_faction
+				ITA_italy_first
+			}
+		}
+
+
         "JAP"={
+            minor = yes
      		history = "JAP_GATHERING_STORM_DESC"
 			ideology = fascism
 			ideas = {
