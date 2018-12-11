@@ -270,6 +270,16 @@ create_country_leader = {
 	}
 }
 
+create_country_leader = {
+	name = "George VI"
+	desc = "POLITICS_GEORGE_VI_DESC"
+	picture = "Portrait_Britain_George_VI (2).dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
 
 create_country_leader = {
 	name = "Stanley Baldwin"
