@@ -90,6 +90,7 @@ if = {
 	else = {
 		puppet = MAL
 		puppet = RAJ
+		puppet = EGY
 	}
 }
 

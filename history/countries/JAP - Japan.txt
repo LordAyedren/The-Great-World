@@ -199,6 +199,9 @@ if = {
 			target = MAN
 			autonomous_state = autonomy_puppet
 		}
+		else = {
+		puppet = KOR
+		}
 	}
 }
 
