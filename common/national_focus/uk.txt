@@ -8,8 +8,12 @@ focus_tree = {
 			add = 10
 			tag = ENG
 		}
-	}
+	}	
 	
+	default = no
+	
+	continuous_focus_position = { x = 0 y = 1300 }
+
 	reset_on_civilwar = no
 
 	focus = {
@@ -39,7 +43,8 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-				add_stability = 0.4		
+				add_stability = 0.4	
+				add_war_support = -0.1	
 			}
 		}	
 
@@ -100,8 +105,8 @@ focus_tree = {
 		}
 
 	focus = {
-		id = ENG_colonial_support_for_the_monarchy
-		icon = GFX_focus_chi_british_cooperation
+		id = ENG_what_to_do_with_france
+		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = ENG_finalizing_the_monarchy }
 		x = -3
 		y = 1
@@ -111,12 +116,9 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-				RAJ = {
-					add_opinion_modifier = { target = ENG modifier = aided_industry }
-				}	
+				add_political_power = 100	
 			}
 		}
-	
 
 	focus = {
 		id = ENG_reclaim_ireland
@@ -409,8 +411,150 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = 400000		
 		}
-	}			
+	}		
 
+	focus = {
+		id = ENG_claim_normandy
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			15 = {
+				add_claim_by = ENG
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_claim_aquitaine
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = -2
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			19 = {
+				add_claim_by = ENG
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_colonial_dispute
+		icon = GFX_focus_AST_never_gallipoli_shine
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = 2
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_claim = 461
+			add_state_claim = 462
+			add_state_claim = 513
+			add_state_claim = 458
+			add_state_claim = 459
+			add_state_claim = 460			
+			}
+		}
+
+	focus = {
+		id = ENG_strike_france
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		prerequisite = { focus = ENG_claim_normandy }
+		prerequisite = { focus = ENG_claim_aquitaine }                  
+		prerequisite = { focus = ENG_colonial_dispute }
+		x = 0
+		y = 1
+		relative_position_id = ENG_claim_normandy
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FRA
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_integrate_aquitaine_normandy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ENG_strike_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_strike_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			controls_state = 19
+			controls_state = 15
+			is_subject = no
+		}
+
+		completion_reward = {
+			add_state_core = 19
+			add_state_core = 15		
+		}
+	}	
+
+	focus = {
+		id = ENG_rubber_in_africa
+		icon = GFX_goal_tfv_saf_secure_interests_in_africa
+		prerequisite = { focus = ENG_integrate_aquitaine_normandy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_integrate_aquitaine_normandy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			556 = {
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}	
+			660 = {
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_form_the_british_empire
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = ENG_rubber_in_africa focus = ENG_recruit_irishmen focus = ENG_integrate_ireland }
+		x = 2
+		y = 5
+		relative_position_id = ENG_colonial_dispute
+		cost = 5
+
+		available_if_capitulated = yes
+			
+		completion_reward = {
+				create_faction = "ENG_british_empire_faction"
+			}
 
 					
 

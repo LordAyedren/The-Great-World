@@ -2079,9 +2079,26 @@
  ENG_release_ireland:0 "Release Ireland"
  ENG_release_ireland_desc:0 "The Irish would make a great addition to our colonial collection."
  ENG_integrate_ireland:0 "Integrate Ireland"
- ENG_integrate_ireland:0 "Integrating Ireland would give us the most benefits."
+ ENG_integrate_ireland_desc:0 "Integrating Ireland would give us more benefits than if we decided to release them as a puppet."
  ENG_recruit_irishmen:0 "Recruit Irishmen"
  ENG_recruit_irishmen_desc:0 "In exchange for giving the Irish autonomy we need to recruit soldiers."
+ ENG_what_to_do_with_france:0 "Prepair to Reclaim English France"
+ ENG_what_to_do_with_france_desc:0 "We should get ready to retake the land we lost in the 100 years war centuries ago because we still have a valid claim right?"
+ ENG_claim_normandy:0 "Claim Normandy"
+ ENG_claim_normandy_desc:0 "Time to reclaim Normandy, the land of William the Conqurer"
+ ENG_claim_aquitaine:0 "Claim Aquitaine"
+ ENG_claim_aquitaine_desc:0 "The Gascon peoples need our help to bring them back into the British sphere"
+ ENG_colonial_dispute:0 "Instigate a Colonial Dispute"
+ ENG_colonial_dispute_desc:0 "To justify declaring war on France, we need to force a colonial dispute between our empires."
+ ENG_strike_france:0 "Strike France"
+ ENG_strike_france_desc:0 "The time has come for us to retake our rightful territory and finally end the rivalry between us and the French"
+ ENG_integrate_aquitaine_normandy:0 "Integrate Aquitaine and Normandy"
+ ENG_integrate_aquitaine_normandy_desc:0 "Let us bring Aquitaine and Normandy back into the empire like the good old days... 500 years ago..."
+ ENG_rubber_in_africa:0 "Rubber in French Africa"
+ ENG_rubber_in_africa_desc:0 "The French African colonies are not being exploited for rubber to their fullest extent. It is time to fullfill their potential"
+ ENG_form_the_british_empire:0 "Form The British Empire"
+ ENG_form_the_british_empire_desc:0 "Our Empire is rising again from the past"
+
 
 
 
