@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 	
-	continuous_focus_position = { x = 0 y = 1300 }
+	continuous_focus_position = { x = 0 y = 1500 }
 
 	reset_on_civilwar = no
 
@@ -107,11 +107,11 @@ focus_tree = {
 	focus = {
 		id = ENG_what_to_do_with_france
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = ENG_finalizing_the_monarchy }
-		x = -3
+		prerequisite = { focus = ENG_anti_french_propaganda }
+		x = 0
 		y = 1
-		relative_position_id = ENG_finalizing_the_monarchy
-		cost = 10
+		relative_position_id = ENG_anti_french_propaganda
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -124,7 +124,7 @@ focus_tree = {
 		id = ENG_reclaim_ireland
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = ENG_finalizing_the_monarchy }
-		x = 3		
+		x = 2		
 		y = 1
 		relative_position_id = ENG_finalizing_the_monarchy
 		cost = 10
@@ -546,7 +546,7 @@ focus_tree = {
 		icon = GFX_goal_generic_alliance
 		prerequisite = { focus = ENG_rubber_in_africa focus = ENG_recruit_irishmen focus = ENG_integrate_ireland }
 		x = 2
-		y = 5
+		y = 4
 		relative_position_id = ENG_colonial_dispute
 		cost = 5
 
@@ -555,8 +555,23 @@ focus_tree = {
 		completion_reward = {
 				create_faction = "ENG_british_empire_faction"
 			}
+		}	
 
-					
+	focus = {
+		id = ENG_anti_french_propaganda
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ENG_finalizing_the_monarchy }
+		x = -3
+		y = 1
+		relative_position_id = ENG_finalizing_the_monarchy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_political_power = -50
+			}
+		}					
 
 
 
