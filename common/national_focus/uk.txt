@@ -42,6 +42,11 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
+
+		ai_will_do = {
+			factor = 9
+		}	
+
 		completion_reward = {
 				add_stability = 0.4	
 				add_war_support = -0.1	
@@ -59,6 +64,11 @@ focus_tree = {
 		cost = 10
 
 		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}	
 
 		completion_reward = {
 			add_popularity = {
@@ -229,12 +239,6 @@ focus_tree = {
 		cost = 10
 
 		available_if_capitulated = yes
-
-
-		
-		ai_will_do = {
-			factor = 2
-		}
 
 		available = {
 			controls_state = 135
@@ -571,7 +575,226 @@ focus_tree = {
 		completion_reward = {
 				add_political_power = -50
 			}
-		}					
+		}
+	
+	focus = {
+		id = ENG_democratic_bastian
+		prerequisite = { focus = ENG_stay_with_the_status_quo }
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = ENG_stay_with_the_status_quo
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			}
+		}
+
+	focus = {
+		id = ENG_european_democracy
+		prerequisite = { focus = ENG_democratic_bastian }
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = ENG_democratic_bastian
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_bel
+		prerequisite = { focus = ENG_european_democracy }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_european_democracy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = BEL
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_swe
+		prerequisite = { focus = ENG_european_democracy }
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		relative_position_id = ENG_european_democracy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = SWE
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_lux
+		prerequisite = { focus = ENG_guarantee_bel }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_guarantee_bel
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = LUX
+			}
+		}	
+
+	focus = {
+		id = ENG_guarantee_ire
+		prerequisite = { focus = ENG_guarantee_swe }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_guarantee_swe
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = IRE
+			}
+		}
+
+	focus = {
+		id = ENG_diplomatic_position
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ENG_stay_with_the_status_quo }
+		x = 6
+		y = 1
+		relative_position_id = ENG_stay_with_the_status_quo
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 8
+		}	
+
+		completion_reward = {
+				add_political_power = 100
+			}
+		}
+
+	focus = {
+		id = ENG_go_with_france
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = ENG_diplomatic_position }
+		mutually_exclusive = { focus = ENG_form_protection_league }
+		x = -2
+		y = 1
+		relative_position_id = ENG_diplomatic_position
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			}
+		}	
+
+	focus = {
+		id = ENG_form_protection_league
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ENG_diplomatic_position }
+		mutually_exclusive = { focus = ENG_go_with_france }
+		x = 2
+		y = 1
+		relative_position_id = ENG_diplomatic_position
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_faction = "ENG_protection_league"
+			}
+		}
+
+	focus = {
+		id = ENG_support_france
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_go_with_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_go_with_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}
+
+	focus = {
+		id = ENG_trade_deals_france
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ENG_support_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_support_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}	
+
+	focus = {
+		id = ENG_technology_sharing
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ENG_trade_deals_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_trade_deals_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}
+
+	focus = {
+		id = ENG_request_faction_members
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ENG_technology_sharing }
+		prerequisite = { focus = ENG_guarantee_ire }
+		prerequisite = { focus = ENG_guarantee_lux }
+		x = -2
+		y = 1
+		relative_position_id = ENG_technology_sharing
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}																						
+
+
+									
 
 
 
