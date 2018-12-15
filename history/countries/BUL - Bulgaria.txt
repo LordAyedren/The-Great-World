@@ -84,7 +84,7 @@ set_politics = {
 		}
 
 		fascism = {
-			popularity = 35
+			popularity = 60
 		}
 		
 		communism = {
@@ -92,11 +92,11 @@ set_politics = {
 			banned = yes
 		}
 		neutrality = { 
-			popularity = 60
+			popularity = 35
 		}
 	}
 	
-	ruling_party = neutrality
+	ruling_party = fascism
 	last_election = "1931.6.21"
 	election_frequency = 48
 	elections_allowed = no
@@ -111,7 +111,7 @@ set_politics = {
 		}
 
 		fascism = {
-			popularity = 35
+			popularity = 60
 		}
 		
 		communism = {
@@ -119,11 +119,11 @@ set_politics = {
 			banned = yes
 		}
 		neutrality = { 
-			popularity = 60
+			popularity = 35
 		}
 	}
 	
-	ruling_party = neutrality
+	ruling_party = fascism
 	last_election = "1938.3.27"
 	election_frequency = 48
 	elections_allowed = no
