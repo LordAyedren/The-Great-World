@@ -1,0 +1,131 @@
+focus_tree = {
+	id = 'nic_focus'
+	country = {
+		factor=0
+		modifier = {
+			add = 10
+			tag = NIC
+		}
+	}
+	default = no
+
+	focus = {
+		id = confederatepartyagenda
+		icon = GFX_focus_generic_strike_at_democracy1
+		x =2
+		y =0
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { }
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_stability = 0.05
+		}
+
+	}
+
+	focus = {
+		id = conservativefocus
+		icon = GFX_focus_generic_military_mission
+		x =0
+		y =1
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { focus = reforminitiatve}
+		prerequisite = { focus = confederatepartyagenda}
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = reforminitiatve
+		icon = GFX_focus_generic_the_giant_wakes
+		x =4
+		y =1
+    	ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = confederatepartyagenda}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = enslavepeasants
+		icon = GFX_focus_cze_german_puppet
+		x =0
+		y =2
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = conservativefocus}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = communityelections
+		icon = GFX_goal_anschluss
+		x =3
+		y =2
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = reforminitiatve}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = limitedindenture
+		icon = GFX_focus_prc_infiltration
+		x =4
+		y =2
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = reforminitiatve}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = smallbusinessreforms
+		icon = GFX_goal_continuous_increase_nu
+		x =6
+		y =2
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = reforminitiatve}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = universalemancipation
+		icon = GFX_goal_continuous_boost_freedom
+		x =4
+		y =3
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = limitedindenture}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = specialeconomiczones
+		icon = GFX_focus_generic_rubber
+		x =6
+		y =3
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = smallbusinessreforms}
+		cost = 10
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = landredistribution
+		icon = GFX_focus_generic_treaty
+		x =5
+		y =4
+		ai_will_do = { factor = 50}
+		mutually_exclusive = { }
+		prerequisite = { focus = universalemancipation }
+		prerequisite = { focus = specialeconomiczones }
+		cost = 10
+		available_if_capitulated = yes
+	}
+}
