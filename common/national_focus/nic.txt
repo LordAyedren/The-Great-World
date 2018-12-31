@@ -1,131 +1,1866 @@
 focus_tree = {
-	id = 'nic_focus'
-	country = {
-		factor=0
-		modifier = {
-			add = 10
-			tag = NIC
-		}
-	}
-	default = no
-
-	focus = {
-		id = confederatepartyagenda
-		icon = GFX_focus_generic_strike_at_democracy1
-		x =2
-		y =0
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { }
-		cost = 10
-		available_if_capitulated = yes
-		completion_reward = {
-			add_stability = 0.05
-		}
-
-	}
-
-	focus = {
-		id = conservativefocus
-		icon = GFX_focus_generic_military_mission
-		x =0
-		y =1
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { focus = reforminitiatve}
-		prerequisite = { focus = confederatepartyagenda}
-		cost = 10
-		available_if_capitulated = yes
-		completion_reward = {
-			add_stability = 0.05
-		}
-	}
-	focus = {
-		id = reforminitiatve
-		icon = GFX_focus_generic_the_giant_wakes
-		x =4
-		y =1
-    	ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = confederatepartyagenda}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = enslavepeasants
-		icon = GFX_focus_cze_german_puppet
-		x =0
-		y =2
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = conservativefocus}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = communityelections
-		icon = GFX_goal_anschluss
-		x =3
-		y =2
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = reforminitiatve}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = limitedindenture
-		icon = GFX_focus_prc_infiltration
-		x =4
-		y =2
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = reforminitiatve}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = smallbusinessreforms
-		icon = GFX_goal_continuous_increase_nu
-		x =6
-		y =2
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = reforminitiatve}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = universalemancipation
-		icon = GFX_goal_continuous_boost_freedom
-		x =4
-		y =3
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = limitedindenture}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = specialeconomiczones
-		icon = GFX_focus_generic_rubber
-		x =6
-		y =3
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = smallbusinessreforms}
-		cost = 10
-		available_if_capitulated = yes
-	}
-	focus = {
-		id = landredistribution
-		icon = GFX_focus_generic_treaty
-		x =5
-		y =4
-		ai_will_do = { factor = 50}
-		mutually_exclusive = { }
-		prerequisite = { focus = universalemancipation }
-		prerequisite = { focus = specialeconomiczones }
-		cost = 10
-		available_if_capitulated = yes
-	}
+id = TGWNic3
+country = {
+factor = 0
+modifier = {
+add = 10
+tag = NIC
 }
+}
+#Focus for Universal Emancipation
+focus = {
+id = NIC_universalemancipation
+icon = GFX_goal_continuous_boost_freedom
+x = 31
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_limitationofindentureact }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Construction Effort III
+focus = {
+id = NIC_constructioneffortiii
+icon = GFX_goal_generic_construct_civ_factory
+x = 21
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_infrastructureeffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = construction_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size < 2
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Army Effort
+focus = {
+id = NIC_armyeffort
+icon = GFX_goal_generic_allies_build_infantry
+x = 3
+y = 0
+cost = 10
+available_if_capitulated = yes
+completion_reward = {
+
+
+army_experience = 5
+add_tech_bonus = {
+name = land_doc_bonus
+bonus = 0.5
+uses = 1
+category = land_doctrine
+}
+
+
+ }
+
+ }
+
+#Focus for Mechanization Effort
+focus = {
+id = NIC_mechanizationeffort
+icon = GFX_goal_generic_build_tank
+x = 4
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_motorizationeffort }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = motorized_bonus
+ahead_reduction = 0.5
+uses = 1
+category = motorized_equipment
+}
+
+
+ }
+
+ }
+
+#Focus for Doctrine Effort II
+focus = {
+id = NIC_doctrineeffortii
+icon = GFX_goal_generic_army_doctrines
+x = 3
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_doctrineeffort }
+completion_reward = {
+
+
+army_experience = 5
+add_tech_bonus = {
+name = land_doc_bonus
+bonus = 0.5
+uses = 1
+category = land_doctrine
+}
+
+
+ }
+
+ }
+
+#Focus for Doctrine Effort
+focus = {
+id = NIC_doctrineeffort
+icon = GFX_goal_generic_army_doctrines
+x = 3
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_armyeffort }
+completion_reward = {
+
+
+army_experience = 5
+add_tech_bonus = {
+name = land_doc_bonus
+bonus = 0.5
+uses = 1
+category = land_doctrine
+}
+
+
+ }
+
+ }
+
+#Focus for Equipment Effort
+focus = {
+id = NIC_equipmenteffort
+icon = GFX_goal_generic_small_arms
+x = 2
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_armyeffort }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = infantry_artillery_bonus
+bonus = 0.5
+uses = 1
+category = infantry_weapons
+category = artillery
+}
+
+
+ }
+
+ }
+
+#Focus for Equipment Effort II
+focus = {
+id = NIC_equipmenteffortii
+icon = GFX_goal_generic_army_artillery2
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_equipmenteffort }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = infantry_artillery_bonus
+bonus = 0.5
+uses = 1
+category = infantry_weapons
+category = artillery
+}
+
+
+ }
+
+ }
+
+#Focus for Motorization Effort
+focus = {
+id = NIC_motorizationeffort
+icon = GFX_goal_generic_army_motorized
+x = 4
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_armyeffort }
+bypass = {
+
+ has_tech = motorised_infantry
+
+ }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = motorized_bonus
+bonus = 0.75
+technology = motorised_infantry
+}
+
+
+ }
+
+ }
+
+#Focus for Equipment Effort III
+focus = {
+id = NIC_equipmenteffortiii
+icon = GFX_goal_generic_army_artillery2
+x = 2
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_equipmenteffortii }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = infantry_artillery_bonus
+ahead_reduction = 1
+uses = 1
+category = infantry_weapons
+category = artillery
+}
+
+
+ }
+
+ }
+
+#Focus for Armor Effort
+focus = {
+id = NIC_armoreffort
+icon = GFX_goal_generic_army_tanks
+x = 4
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_mechanizationeffort }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = armor_bonus
+bonus = 0.5
+uses = 2
+category = armor
+}
+
+
+ }
+
+ }
+
+#Focus for Special Forces
+focus = {
+id = NIC_specialforces
+icon = GFX_goal_generic_special_forces
+x = 3
+y = 6
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_equipmenteffortiii }
+prerequisite = { focus = NIC_doctrineeffortii }
+prerequisite = { focus = NIC_armoreffort }
+prerequisite = { focus = NIC_ }
+completion_reward = {
+
+
+add_ideas = special_forces
+add_tech_bonus = {
+name = special_forces_bonus
+bonus = 0.5
+uses = 1
+technology = paratroopers
+technology = paratroopers2
+technology = marines
+technology = marines2
+technology = tech_mountaineers
+technology = tech_mountaineers2
+}
+
+
+ }
+
+ }
+
+#Focus for Aviation Effort
+focus = {
+id = NIC_aviationeffort
+icon = GFX_goal_generic_build_airforce
+x = 8
+y = 0
+cost = 10
+available_if_capitulated = yes
+completion_reward = {
+
+
+air_experience = 25
+
+if = {
+limit = {
+capital_scope = {
+NOT = {
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+add_building_construction = {
+type = air_base
+level = 2
+instant_build = yes
+}
+ROOT = { set_country_flag = aviation_effort_AB }
+}
+}
+if = {
+limit = {
+capital_scope = {
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+}
+capital_scope = {
+add_building_construction = {
+type = air_base
+level = 2
+instant_build = yes
+}
+ROOT = { set_country_flag = aviation_effort_AB }
+}
+}
+add_tech_bonus = {
+name = air_doc_bonus
+bonus = 0.5
+uses = 1
+category = air_doctrine
+}
+
+
+ }
+
+ }
+
+#Focus for Fighter Focus
+focus = {
+id = NIC_fighterfocus
+icon = GFX_goal_generic_air_fighter2
+x = 7
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_aviationeffort }
+mutually_exclusive = { focus = NIC_bomberfocus }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = fighter_bonus
+bonus = 0.5
+uses = 2
+technology = early_fighter
+technology = fighter1
+technology = fighter2
+technology = fighter3
+technology = heavy_fighter1
+technology = heavy_fighter2
+technology = heavy_fighter3
+}
+
+
+ }
+
+ }
+
+#Focus for Bomber Focus
+focus = {
+id = NIC_bomberfocus
+icon = GFX_goal_generic_air_bomber
+x = 9
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_aviationeffort }
+mutually_exclusive = { focus = NIC_fighterfocus }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = bomber_bonus
+bonus = 0.5
+uses = 2
+technology = strategic_bomber1
+technology = strategic_bomber2
+technology = strategic_bomber3
+category = tactical_bomber
+}
+
+
+ }
+
+ }
+
+#Focus for NAV Effort
+focus = {
+id = NIC_naveffort
+icon = GFX_goal_generic_air_naval_bomber
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_aviationeffortii }
+prerequisite = { focus = NIC_flexiblenavy }
+prerequisite = { focus = NIC_ }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = nav_bomber_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+category = naval_bomber
+}
+
+
+ }
+
+ }
+
+#Focus for Rocket Effort
+focus = {
+id = NIC_rocketeffort
+icon = GFX_focus_rocketry
+x = 8
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_aviationeffortii }
+prerequisite = { focus = NIC_infrastructureeffort }
+prerequisite = { focus = NIC_ }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = jet_rocket_bonus
+ahead_reduction = 0.5
+uses = 2
+category = rocketry
+category = jet_technology
+}
+
+
+ }
+
+ }
+
+#Focus for CAS Effort
+focus = {
+id = NIC_caseffort
+icon = GFX_goal_generic_CAS
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_aviationeffortii }
+prerequisite = { focus = NIC_motorizationeffort }
+prerequisite = { focus = NIC_ }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = CAS_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+category = cas_bomber
+}
+
+
+ }
+
+ }
+
+#Focus for Aviation Effort II
+focus = {
+id = NIC_aviationeffortii
+icon = GFX_goal_generic_air_doctrine
+x = 8
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_bomberfocus focus = NIC_fighterfocus }
+completion_reward = {
+
+
+air_experience = 25
+if = {
+limit = {
+capital_scope = {
+OR = {
+NOT = { is_controlled_by = ROOT }
+NOT = {
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+}
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+add_building_construction = {
+type = air_base
+level = 2
+instant_build = yes
+}
+ROOT = { set_country_flag = aviation_effort_2_AB }
+}
+}
+if = {
+limit = {
+capital_scope = {
+is_controlled_by = ROOT
+free_building_slots = {
+building = air_base
+size > 1
+}
+}
+}
+capital_scope = {
+add_building_construction = {
+type = air_base
+level = 2
+instant_build = yes
+}
+ROOT = { set_country_flag = aviation_effort_2_AB }
+}
+}
+add_tech_bonus = {
+name =  air_doc_bonus
+bonus = 0.5
+uses = 1
+category = air_doctrine
+}
+
+
+ }
+
+ }
+
+#Focus for Naval Effort
+focus = {
+id = NIC_navaleffort
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 14
+y = 0
+cost = 10
+available_if_capitulated = yes
+available = {
+
+
+any_state = {
+is_coastal = yes
+is_controlled_by = ROOT
+}
+
+
+ }
+completion_reward = {
+
+
+navy_experience = 25
+if = {
+limit = {
+NOT = {
+any_owned_state = {
+dockyard > 0
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+}
+any_owned_state = {
+is_coastal = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+is_coastal = yes
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = dockyard
+level = 3
+instant_build = yes
+}
+}
+set_country_flag = naval_effort_built
+}
+if = {
+limit = {
+NOT = { has_country_flag = naval_effort_built }
+any_owned_state = {
+dockyard > 0
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+}
+random_owned_controlled_state = {
+limit = {
+dockyard > 0
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = dockyard
+level = 3
+instant_build = yes
+}
+}
+set_country_flag = naval_effort_built
+}
+if = {
+limit = {
+NOT = { has_country_flag = naval_effort_built }
+NOT = {
+any_owned_state = {
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+}
+}
+random_state = {
+limit = {
+controller = { tag = ROOT }
+free_building_slots = {
+building = dockyard
+size > 2
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = dockyard
+level = 3
+instant_build = yes
+}
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Submarine Effort
+focus = {
+id = NIC_submarineeffort
+icon = GFX_goal_generic_navy_submarine
+x = 13
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_flexiblenavy focus = NIC_largenavy }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = ss_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+technology = early_submarine
+technology = basic_submarine
+technology = improved_submarine
+technology = advanced_submarine
+}
+
+
+ }
+
+ }
+
+#Focus for Large Navy
+focus = {
+id = NIC_largenavy
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 15
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_navaleffort }
+mutually_exclusive = { focus = NIC_flexiblenavy }
+mutually_exclusive = { focus = NIC_flexiblenavy }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = fleet_in_being_bonus
+bonus = 0.5
+uses = 2
+category = fleet_in_being_tree
+}
+
+
+ }
+
+ }
+
+#Focus for Flexible Navy
+focus = {
+id = NIC_flexiblenavy
+icon = GFX_goal_generic_occupy_states_coastal
+x = 13
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_navaleffort }
+mutually_exclusive = { focus = NIC_largenavy }
+completion_reward = {
+add_tech_bonus = {
+name = sub_op_bonus
+bonus = 0.5
+uses = 2
+technology = convoy_interdiction_ti
+technology = unrestricted_submarine_warfare
+technology = wolfpacks
+technology = advanced_submarine_warfare
+technology = combined_operations_raiding
+}
+ }
+
+ }
+
+#Focus for Destroyer Effort
+focus = {
+id = NIC_destroyereffort
+icon = GFX_goal_generic_wolf_pack
+x = 13
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_submarineeffort }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = dd_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+technology = early_destroyer
+technology = basic_destroyer
+technology = improved_destroyer
+technology = advanced_destroyer
+}
+
+
+ }
+
+ }
+
+#Focus for Cruiser Effort
+focus = {
+id = NIC_cruisereffort
+icon = GFX_goal_generic_navy_cruiser
+x = 15
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_largenavy focus = NIC_flexiblenavy }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = cr_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+technology = improved_light_cruiser
+technology = advanced_light_cruiser
+technology = improved_heavy_cruiser
+technology = advanced_heavy_cruiser
+}
+
+
+ }
+
+ }
+
+#Focus for Small Plot Farm Ownership
+focus = {
+id = NIC_smallplotfarmownership
+icon = GFX_goal_generic_consumer_goods
+x = 31
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_reforminitiatve }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Confederate Party Agenda
+focus = {
+id = NIC_confederatepartyagenda
+icon = GFX_focus_generic_strike_at_democracy1
+x = 28
+y = 0
+cost = 10
+available_if_capitulated = yes
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Conservative Focus
+focus = {
+id = NIC_conservativefocus
+icon = GFX_goal_generic_political_pressure
+x = 25
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_confederatepartyagenda }
+mutually_exclusive = { focus = NIC_reforminitiatve }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for National Guard
+focus = {
+id = NIC_nationalguard
+icon = GFX_focus_generic_little_entente
+x = 23
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_conservativefocus }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Reform Initiatve
+focus = {
+id = NIC_reforminitiatve
+icon = GFX_focus_generic_diplomatic_treaty
+x = 31
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_confederatepartyagenda }
+mutually_exclusive = { focus = NIC_conservativefocus }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Farm Consolidadtion Laws
+focus = {
+id = NIC_farmconsolidadtionlaws
+icon = GFX_goal_generic_construction2
+x = 25
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_indenturepeasants }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Community Elections
+focus = {
+id = NIC_communityelections
+icon = GFX_goal_generic_national_unity
+x = 33
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_reforminitiatve }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Agricultural Nationalization
+focus = {
+id = NIC_agriculturalnationalization
+icon = GFX_goal_generic_demand_territory
+x = 25
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_farmconsolidadtionlaws }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Indenture Peasants
+focus = {
+id = NIC_indenturepeasants
+icon = GFX_focus_CZE_german_puppet
+x = 25
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_conservativefocus }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Price Controls
+focus = {
+id = NIC_pricecontrols
+icon = GFX_focus_generic_treaty
+x = 27
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_conservativefocus }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Nuclear Effort
+focus = {
+id = NIC_nucleareffort
+icon = GFX_focus_wonderweapons
+x = 17
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_infrastructureeffortii }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = nuclear_bonus
+ahead_reduction = 0.5
+category = nuclear
+}
+
+
+ }
+
+ }
+
+#Focus for Extra Research Slot
+focus = {
+id = NIC_extraresearchslot
+icon = GFX_focus_research2
+x = 19
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_infrastructureeffortii }
+completion_reward = {
+
+
+add_research_slot = 1
+
+
+ }
+
+ }
+
+#Focus for Secret Weapons
+focus = {
+id = NIC_secretweapons
+icon = GFX_goal_generic_secret_weapon
+x = 21
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_infrastructureeffortii }
+completion_reward = {
+
+
+add_tech_bonus = {
+name = secret_bonus
+bonus = 0.5
+uses = 4
+category = electronics
+category = nuclear
+category = rocketry
+}
+
+
+ }
+
+ }
+
+#Focus for Extra Research Slot II
+focus = {
+id = NIC_extraresearchslotii
+icon = GFX_focus_research2
+x = 19
+y = 6
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_extraresearchslot }
+available = {
+
+
+num_of_factories > 50
+
+
+ }
+completion_reward = {
+
+
+add_research_slot = 1
+
+
+ }
+
+ }
+
+#Focus for Infrastructure Effort II
+focus = {
+id = NIC_infrastructureeffortii
+icon = GFX_goal_generic_construct_infrastructure
+x = 19
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_infrastructureeffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = infrastructure_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = infrastructure
+size < 1
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 1
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Armament Effort III
+focus = {
+id = NIC_armamenteffortiii
+icon = GFX_goal_generic_construct_mil_factory
+x = 21
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_armamenteffortii }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = production_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = arms_factory
+size < 1
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Armament Effort II
+focus = {
+id = NIC_armamenteffortii
+icon = GFX_goal_generic_construct_mil_factory
+x = 21
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_armamenteffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = production_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = arms_factory
+size < 1
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Infrastructure Effort
+focus = {
+id = NIC_infrastructureeffort
+icon = GFX_goal_generic_construct_infrastructure
+x = 18
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_constructioneffortii }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = infrastructure_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = infrastructure
+size < 1
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 1
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Capital Ship Effort
+focus = {
+id = NIC_capitalshipeffort
+icon = GFX_goal_generic_navy_battleship
+x = 15
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_cruisereffort }
+completion_reward = {
+
+
+navy_experience = 25
+add_tech_bonus = {
+name = capital_ships_bonus
+bonus = 0.5
+ahead_reduction = 1
+uses = 1
+technology = basic_battlecruiser
+technology = basic_battleship
+technology = improved_battleship
+technology = advanced_battleship
+technology = heavy_battleship
+technology = heavy_battleship2
+technology = early_carrier
+technology = basic_carrier
+technology = improved_carrier
+technology = advanced_carrier
+}
+
+
+ }
+
+ }
+
+#Focus for Industrial Effort
+focus = {
+id = NIC_industrialeffort
+icon = GFX_goal_generic_production
+x = 19
+y = 0
+cost = 10
+available_if_capitulated = yes
+completion_reward = {
+
+
+add_tech_bonus = {
+name = industrial_bonus
+bonus = 0.5
+uses = 1
+category = industry
+}
+
+
+ }
+
+ }
+
+#Focus for Construction Effort
+focus = {
+id = NIC_constructioneffort
+icon = GFX_goal_generic_construct_civ_factory
+x = 18
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_industrialeffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = construction_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size < 1
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 0
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size > 0
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Armament Effort
+focus = {
+id = NIC_armamenteffort
+icon = GFX_goal_generic_construct_mil_factory
+x = 21
+y = 1
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_industrialeffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = production_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = arms_factory
+size < 1
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = arms_factory
+size > 0
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Construction Effort II
+focus = {
+id = NIC_constructioneffortii
+icon = GFX_goal_generic_construct_civ_factory
+x = 18
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_constructioneffort }
+bypass = {
+
+
+custom_trigger_tooltip = {
+tooltip = construction_effort_tt
+all_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size < 1
+include_locked = yes
+}
+}
+}
+
+
+ }
+completion_reward = {
+
+
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 0
+include_locked = yes
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = industrial_complex
+size > 0
+include_locked = yes
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+
+ }
+
+ }
+
+#Focus for Political Parties
+focus = {
+id = NIC_politicalparties
+icon = GFX_goal_generic_major_alliance
+x = 33
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_communityelections }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for State of Emergency
+focus = {
+id = NIC_stateofemergency
+icon = GFX_goal_continuous_suppression
+x = 23
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_journalisimresponsibilitylaws }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Permenant War Footing
+focus = {
+id = NIC_permenantwarfooting
+icon = GFX_goal_generic_army_tanks
+x = 25
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_stateofemergency }
+prerequisite = { focus = NIC_industrialnationalization }
+prerequisite = { focus = NIC_agriculturalnationalization } 
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Limitation of Indenture Act
+focus = {
+id = NIC_limitationofindentureact
+icon = GFX_goal_generic_propaganda
+x = 31
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_smallplotfarmownership }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Journalisim Responsibility Laws
+focus = {
+id = NIC_journalisimresponsibilitylaws
+icon = GFX_goal_tfv_strengthen_commonwealth_ties
+x = 23
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_nationalguard }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Nationaal Assembly
+focus = {
+id = NIC_nationaalassembly
+icon = GFX_focus_generic_self_management
+x = 33
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_politicalparties }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Small Business Reforms
+focus = {
+id = NIC_smallbusinessreforms
+icon = GFX_goal_generic_scientific_exchange
+x = 29
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_reforminitiatve }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Special Economic Zones
+focus = {
+id = NIC_specialeconomiczones
+icon = GFX_goal_generic_construct_infrastructure
+x = 29
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_smallbusinessreforms }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Free Market Reforms
+focus = {
+id = NIC_freemarketreforms
+icon = GFX_goal_tripartite_pact
+x = 29
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_specialeconomiczones }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Land Redistribution
+focus = {
+id = NIC_landredistribution
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 31
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_universalemancipation }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Industrial Nationalization
+focus = {
+id = NIC_industrialnationalization
+icon = GFX_goal_anschluss
+x = 27
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_outlawunions }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#Focus for Outlaw Unions
+focus = {
+id = NIC_outlawunions
+icon = GFX_goal_generic_construction2
+x = 27
+y = 3
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = NIC_pricecontrols }
+ai_will_do = {
+ factor = 1
+ }
+
+ }
+
+#End of focuses
+ }
