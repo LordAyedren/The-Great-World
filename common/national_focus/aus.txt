@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 focus_tree = { 
 id = Aus4
 country = { 
@@ -10,44 +11,188 @@ tag = AUS
 #Focus for Support The Kaiser
 focus = { 
 id = AUS_supportthekaiser
+=======
+focus_tree = {
+id = 3
+country = {
+factor = 0
+modifier = {
+add = 10
+tag = Aus
+}
+}
+#Focus for Kaiser Military Youth
+focus = {
+id = Aus_kaisermilitaryyouth
+icon = GFX_focus_generic_little_entente
+x = 8
+y = 5
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = Aus_garnerpublicsupport }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+add_manpower= 80000
+ }
+
+ }
+
+#Focus for Garner Public Support
+focus = {
+id = Aus_garnerpublicsupport
+icon = GFX_goal_tfv_strengthen_commonwealth_ties
+x = 8
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = Aus_reinforcethekaisersauthority }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+add_political_power= 100
+ }
+
+ }
+
+#Focus for Political Reforms
+focus = {
+id = Aus_politicalreforms
+icon = GFX_goal_generic_forceful_treaty
+x = 9
+y = 0
+cost = 10
+available_if_capitulated = yes
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+add_political_power= 100
+ }
+
+ }
+
+#Focus for Support The Status Quo
+focus = {
+id = Aus_supportthestatusquo
+icon = GFX_goal_support_democracy
+x = 14
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = Aus_liberty }
+mutually_exclusive = { focus = Aus_liberateaustrianworkers }
+ai_will_do = {
+ factor = 10
+ }
+completion_reward = {
+add_popularity= {
+ideology = democracy
+popularity = 0.20
+}
+ }
+
+ }
+
+#Focus for Liberate Austrian Workers
+focus = {
+id = Aus_liberateaustrianworkers
+icon = GFX_goal_support_communism
+x = 10
+y = 2
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = Aus_liberty }
+mutually_exclusive = { focus = Aus_supportthestatusquo }
+ai_will_do = {
+ factor = 10
+ }
+completion_reward = {
+add_popularity= {
+ideology = communism
+popularity = 0.20
+}
+ }
+
+ }
+
+#Focus for Support The Kaiser
+focus = {
+id = Aus_supportthekaiser
+>>>>>>> origin/master
 icon = GFX_focus_generic_home_defense
 x = 8
 y = 2
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_conservatism } 
 completion_reward = { 
 add_stability= .10
  } 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_conservatism }
+mutually_exclusive = { focus = Aus_unitedaustria }
+ai_will_do = {
+ factor = 70
+ }
+completion_reward = {
+add_stability= 20.0
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for United Austria
+<<<<<<< HEAD
 focus = { 
 id = AUS_unitedaustria
+=======
+focus = {
+id = Aus_unitedaustria
+>>>>>>> origin/master
 icon = GFX_goal_support_fascism
 x = 4
 y = 2
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_conservatism } 
 mutually_exclusive = { focus = AUS_supportthekaiser } 
 completion_reward = { 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_conservatism }
+mutually_exclusive = { focus = Aus_supportthekaiser }
+ai_will_do = {
+ factor = 10
+ }
+completion_reward = {
+>>>>>>> origin/master
 add_popularity= {
 ideology = fascism
 popularity = 0.20
 }
- } 
+ }
 
- } 
+ }
 
 #Focus for Conservatism
+<<<<<<< HEAD
 focus = { 
 id = AUS_conservatism
+=======
+focus = {
+id = Aus_conservatism
+>>>>>>> origin/master
 icon = GFX_goal_generic_allies_build_infantry
 x = 6
 y = 1
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_politicalreforms } 
 mutually_exclusive = { focus = AUS_liberty } 
@@ -56,16 +201,33 @@ completion_reward = {
 add_stability= 0.05
  
  } 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_politicalreforms }
+mutually_exclusive = { focus = Aus_liberty }
+ai_will_do = {
+ factor = 80
+ }
+completion_reward = {
+add_stability= 0.05
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Liberty
+<<<<<<< HEAD
 focus = { 
 id = AUS_liberty
+=======
+focus = {
+id = Aus_liberty
+>>>>>>> origin/master
 icon = GFX_goal_continuous_increase_nu
 x = 12
 y = 1
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_politicalreforms } 
 mutually_exclusive = { focus = AUS_conservatism } 
@@ -74,16 +236,33 @@ completion_reward = {
 add_stability= 0.20
  
  } 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_politicalreforms }
+mutually_exclusive = { focus = Aus_conservatism }
+ai_will_do = {
+ factor = 20
+ }
+completion_reward = {
+add_stability= 0.20
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Reinforce The Kaiser's Authority
+<<<<<<< HEAD
 focus = { 
 id = AUS_reinforcethekaisersauthority
+=======
+focus = {
+id = Aus_reinforcethekaisersauthority
+>>>>>>> origin/master
 icon = GFX_focus_hun_elect_a_king
 x = 8
 y = 3
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_supportthekaiser } 
 completion_reward = { 
@@ -91,29 +270,58 @@ completion_reward = {
 add_stability= 0.05
  
  } 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_supportthekaiser }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+add_stability= 0.05
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Fascist Takeover
+<<<<<<< HEAD
 focus = { 
 id = AUS_fascisttakeover
+=======
+focus = {
+id = Aus_fascisttakeover
+>>>>>>> origin/master
 icon = GFX_focus_generic_strike_at_democracy1
 x = 4
 y = 4
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_fascistsolidification } 
 completion_reward = { 
 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_fascistsolidification }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 set_politics= {
  ruling_party = fascism
 elections_allowed = no
 }
+<<<<<<< HEAD
  
  } 
+=======
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
+<<<<<<< HEAD
 #Focus for Liberate Austrian Workers
 focus = { 
 id = AUS_liberateaustrianworkers
@@ -168,24 +376,80 @@ add_political_power= 100
 #Focus for Bring Down The Nobility
 focus = { 
 id = AUS_bringdownthenobility
+=======
+#Focus for Fascist Militarism
+    focus = {
+        id = Aus_fascistmilitarism
+        icon = GFX_focus_generic_military_mission
+        x = 4
+        y = 5
+        cost = 10
+        available_if_capitulated = yes
+        prerequisite = { focus = Aus_fascisttakeover }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+        }
+
+    }
+
+#Focus for Fascist Solidification
+    focus = {
+        id = Aus_fascistsolidification
+        icon = GFX_focus_ger_reichskommisariats
+        x = 4
+        y = 3
+        cost = 10
+        available_if_capitulated = yes
+        prerequisite = { focus = Aus_unitedaustria }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_popularity= {
+                ideology = fascism
+                popularity = 0.30
+            }
+        }
+    }
+
+#Focus for Bring Down The Nobility
+focus = {
+id = Aus_bringdownthenobility
+>>>>>>> origin/master
 icon = GFX_goal_generic_war_with_comintern
 x = 10
 y = 3
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_liberateaustrianworkers } 
 completion_reward = { 
 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_liberateaustrianworkers }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 add_popularity= {
 ideology = communism
 popularity = 0.40
 }
+<<<<<<< HEAD
  
  } 
+=======
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for United Workers
+<<<<<<< HEAD
 focus = { 
 id = AUS_unitedworkers
 icon = GFX_focus_generic_soviet_politics
@@ -195,81 +459,155 @@ cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_bringdownthenobility } 
 completion_reward = { 
+=======
+focus = {
+id = Aus_unitedworkers
+icon = GFX_focus_YUG_pan_slavic_congress
+x = 10
+y = 4
+cost = 10
+available_if_capitulated = yes
+prerequisite = { focus = Aus_bringdownthenobility }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 set_politics= {
  ruling_party = communism
 elections_allowed = no
 }
- } 
+ }
 
- } 
+ }
 
 #Focus for Democratic Support
+<<<<<<< HEAD
 focus = { 
 id = AUS_democraticsupport
+=======
+focus = {
+id = Aus_democraticsupport
+>>>>>>> origin/master
 icon = GFX_focus_generic_the_giant_wakes
 x = 14
 y = 3
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_supportthestatusquo } 
 completion_reward = { 
 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_supportthestatusquo }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 add_popularity= {
 ideology = democratic
 popularity = 0.50
 }
+<<<<<<< HEAD
  
  } 
+=======
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Free And Fair Elections
+<<<<<<< HEAD
 focus = { 
 id = AUS_freeandfairelections
+=======
+focus = {
+id = Aus_freeandfairelections
+>>>>>>> origin/master
 icon = GFX_goal_continuous_def_against_influence
 x = 14
 y = 4
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_democraticsupport } 
 completion_reward = { 
 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_democraticsupport }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 set_politics= {
  ruling_party = democratic
 elections_allowed = yes
 }
+<<<<<<< HEAD
  
  } 
+=======
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Befriend The French
+<<<<<<< HEAD
 focus = { 
 id = AUS_befriendthefrench
+=======
+focus = {
+id = Aus_befriendthefrench
+>>>>>>> origin/master
 icon = GFX_focus_chi_reach_out_to_france
 x = 14
 y = 5
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_freeandfairelections } 
 completion_reward = { 
 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_freeandfairelections }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+>>>>>>> origin/master
 diplomatic_relation= {
 country = FRA
 relation = non_aggression_pact
 }
+<<<<<<< HEAD
  
  } 
+=======
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
 #Focus for Increased Production
+<<<<<<< HEAD
 focus = { 
 id = AUS_increasedproduction
+=======
+focus = {
+id = Aus_increasedproduction
+>>>>>>> origin/master
 icon = GFX_goal_support_fourth_int
 x = 10
 y = 5
 cost = 10
+<<<<<<< HEAD
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_unitedworkers } 
 completion_reward = { 
@@ -349,8 +687,18 @@ ideology = democracy
 popularity = 0.20
 }
  } 
+=======
+available_if_capitulated = yes
+prerequisite = { focus = Aus_unitedworkers }
+ai_will_do = {
+ factor = 1
+ }
+completion_reward = {
+ADDS IDEA(PLACEHOLDER)
+ }
+>>>>>>> origin/master
 
- } 
+ }
 
-#End of focuses 
+#End of focuses
  }
