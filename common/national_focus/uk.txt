@@ -973,7 +973,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_isolate_ottomans
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_continuous_increase_nu
 		prerequisite = { focus = ENG_denounce_abdul }
 		mutually_exclusive = { focus = ENG_rival_ottomans}
 		x = -2
@@ -994,7 +994,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_rival_ottomans
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_attack_allies
 		prerequisite = { focus = ENG_denounce_abdul }
 		mutually_exclusive = { focus = ENG_isolate_ottomans}
 		x = 2
@@ -1015,7 +1015,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_protect_middle_east
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_defence
 		prerequisite = { focus = ENG_isolate_ottomans }
 		x = 0
 		y = 1
@@ -1031,7 +1031,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_protect_balkans
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_defence
 		prerequisite = { focus = ENG_isolate_ottomans }
 		x = -2
 		y = 1
@@ -1047,7 +1047,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_constest_balkans
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = ENG_rival_ottomans }
 		x = 2
 		y = 1
@@ -1063,7 +1063,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_constest_middle_east
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = ENG_rival_ottomans }
 		x = -
 		y = 1
@@ -1079,7 +1079,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_gre
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_protect_balkans }
 		x = 0
 		y = 1
@@ -1095,7 +1095,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_alb
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_guerantee_gre }
 		x = 0
 		y = 1
@@ -1111,7 +1111,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_ser
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_protect_balkans }
 		x = -2
 		y = 1
@@ -1127,7 +1127,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_rom
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_guerantee_ser }
 		x = 0
 		y = 1
@@ -1143,7 +1143,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_arab
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_protect_middle_east }
 		x = 0
 		y = 1
@@ -1160,7 +1160,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_guerantee_persia
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = ENG_guerantee_arab }
 		x = 0
 		y = 1
@@ -1176,12 +1176,12 @@ focus_tree = {
 
 	focus = {
 		id = ENG_take_arabia
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = ENG_constest_middle_east }
 		x = 0
 		y = 1
 		relative_position_id = ENG_constest_middle_east
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 
@@ -1193,8 +1193,92 @@ focus_tree = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = OMA
+				}			
 			}
-		}					
+		}
+
+	focus = {
+		id = ENG_take_balkans_s
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_constest_balkans }
+		x = 0
+		y = 1
+		relative_position_id = ENG_constest_balkans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GRE
+				}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ALB
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_take_balkans_n
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_take_balkans_s }
+		x = 0
+		y = 1
+		relative_position_id = ENG_take_balkans_s
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = BUL
+				}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SER
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_take_persia
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_take_arabia }
+		x = 0
+		y = 1
+		relative_position_id = ENG_take_arabia
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PER
+				}
+			}
+		}	
+
+	focus = {
+		id = ENG_influence_turkish_politics
+		icon = GFX_goal_continuous_def_against_influence
+		prerequisite = { focus = ENG_guerantee_rom focus = ENG_guerantee_alb focus = ENG_guerantee_persia focus = ENG_take_persia focus = ENG_take_balkans_n }
+		x = -2
+		y = 2
+		relative_position_id = ENG_take_arabia
+		cost = 8
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+				}
+			}
+		}													
+
 
 
 
