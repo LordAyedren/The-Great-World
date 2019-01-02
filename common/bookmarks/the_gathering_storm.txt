@@ -26,13 +26,12 @@ bookmarks = {
 			ideology = democratic
 			ideas = {
 				stiff_upper_lip
-				ENG_the_war_to_end_all_wars
 				george_v
 			}
 			focuses = {
-				tizard_mission_focus
-				ENG_war_with_germany
-				ENG_war_with_italy
+				ENG_stay_with_the_status_quo
+				ENG_reinstate_the_monarchy
+				ENG_antiottoman
 			}
 		}
 		"GER"={
