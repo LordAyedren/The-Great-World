@@ -30,8 +30,9 @@ add_political_power= 50
 focus = { 
 id = AUS_supportthekaiser
 icon = GFX_focus_generic_home_defense
-x = 6
-y = 2
+x = 1
+y = 1
+relative_position_id = AUS_conservatism
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_conservatism } 
@@ -48,10 +49,11 @@ add_stability= .10
 focus = { 
 id = AUS_unitedaustria
 icon = GFX_goal_support_fascism
-x = 4
-y = 2
+x = -1
+y = 1
 cost = 10
 available_if_capitulated = yes 
+relative_position_id = AUS_conservatism
 prerequisite = { focus = AUS_conservatism } 
 mutually_exclusive = { focus = AUS_supportthekaiser } 
 ai_will_do = { 
@@ -70,14 +72,13 @@ popularity = 0.20
 focus = { 
 id = AUS_conservatism
 icon = GFX_goal_generic_allies_build_infantry
-x = 5
+x = -3
 y = 1
+relative_position_id = AUS_politicalreforms
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_politicalreforms } 
-mutually_exclusive = { focus = AUS_liberty } 
-mutually_exclusive = { focus = AUS_liberty } 
-mutually_exclusive = { focus = AUS_liberty } 
+mutually_exclusive = { focus = AUS_liberty }  
 ai_will_do = { 
  factor = 89
  } 
@@ -91,12 +92,12 @@ add_stability= 0.05
 focus = { 
 id = AUS_liberty
 icon = GFX_goal_continuous_increase_nu
-x = 11
+x = 3
 y = 1
+relative_position_id = AUS_politicalreforms
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_politicalreforms } 
-mutually_exclusive = { focus = AUS_conservatism } 
 mutually_exclusive = { focus = AUS_conservatism } 
 ai_will_do = { 
  factor = 10
@@ -176,7 +177,7 @@ completion_reward = {
 
 add_political_power= 100
  
- } 
+} 
 
  } 
 
@@ -307,7 +308,7 @@ prerequisite = { focus = AUS_unitedworkers }
 completion_reward = { 
 
 ADDS IDEA(PLACEHOLDER)
- 
+} 
  } 
 
  } 
@@ -316,8 +317,9 @@ ADDS IDEA(PLACEHOLDER)
 focus = { 
 id = AUS_fascistsolidification
 icon = GFX_focus_ger_reichskommisariats
-x = 4
-y = 3
+x = 0
+y = 1
+relative_position_id = AUS_unitedaustria
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_unitedaustria } 
@@ -363,8 +365,9 @@ add_manpower= 80000
 focus = { 
 id = AUS_supportthestatusquo
 icon = GFX_goal_support_democracy
-x = 12
-y = 2
+x = 1
+y = 1
+relative_position_id = AUS_liberty
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_liberty } 
@@ -403,7 +406,7 @@ y = 7
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_announcetheaosp } 
-mutually_exclusive = { focus = AUS_theviennaaxis } 
+mutually_exclusive = { focus = AUS_theviennaaxis	 } 
 ai_will_do = { 
  factor = 80
  } 
