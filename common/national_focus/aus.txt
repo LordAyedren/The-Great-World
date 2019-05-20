@@ -419,30 +419,30 @@ id = austria.2
 
  } 
 
-#Focus for WIP
+#Focus for One Peoples Propaganda
 focus = { 
-id = AUS_wip
+id = AUS_onepeoplespropaganda
 icon = GFX_goal_unknown
 x = 23
 y = 5
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_wip } 
+prerequisite = { focus = AUS_silenceprotestors } 
 ai_will_do = { 
  factor = 1
  } 
 
  } 
 
-#Focus for WIP
+#Focus for Silence Protestors
 focus = { 
-id = AUS_wip
+id = AUS_silenceprotestors
 icon = GFX_goal_unknown
 x = 23
 y = 4
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_wip } 
+prerequisite = { focus = AUS_convertthebalkans } 
 ai_will_do = { 
  factor = 1
  } 
@@ -457,7 +457,7 @@ x = 23
 y = 6
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_wip } 
+prerequisite = { focus = AUS_onepeoplespropaganda } 
 ai_will_do = { 
  factor = 100
  } 
@@ -509,10 +509,10 @@ target = BUL
 
  } 
 
-#Focus for WIP
+#Focus for Convert The Balkans
 focus = { 
-id = AUS_wip
-icon = GFX_goal_unknown
+id = AUS_convertthebalkans
+icon = GFX_focus_mex_restore_the_army_of_christ
 x = 23
 y = 3
 cost = 10
@@ -550,8 +550,7 @@ x = 19
 y = 8
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_ademocraticconfederation } 
-prerequisite = { focus = AUS_theviennaaxis } 
+prerequisite = { focus =AUS_ademocraticconfederation focus =AUS_theviennaaxis } 
 ai_will_do = { 
  factor = 1
  } 
@@ -569,8 +568,7 @@ x = 21
 y = 8
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_ademocraticconfederation } 
-prerequisite = { focus = AUS_theviennaaxis } 
+prerequisite = { focus =AUS_ademocraticconfederation focus =AUS_theviennaaxis } 
 ai_will_do = { 
  factor = 40
  } 
@@ -720,8 +718,7 @@ x = 20
 y = 2
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = AUS_socialconcessions } 
-prerequisite = { focus = AUS_astronggovernment } 
+prerequisite = { focus =AUS_socialconcessions focus =AUS_astronggovernment } 
 ai_will_do = { 
  factor = 33
  } 
