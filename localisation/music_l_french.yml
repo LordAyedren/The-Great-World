@@ -1,4 +1,5 @@
 ﻿l_french:
+ # HOI4 Soundtrack
  maintheme:0 "Thème principal : la Grande Alliance"
  axis_war_1:0 "Thème de l'Axe"
  allies_peace_1:0 "Le matin du Jour-J"
@@ -21,23 +22,55 @@
  allies_peace_2:0 "La fin des épreuves"
  comintern_peace_3:0 "Victoire russe"
  general_peace_2:0 "La fin de la guerre"
-# NEW MUSIC NAMES HERE BELOW
-# DLC 11 / "German March Order Music Pack"
- der_machtigste_konig_im_luftrevier:0 "Der Mächtigste König im Luftrevier"
- panzerlied:0 "Panzerlied"
- schwarzbraun_ist_die_haselnuss:0 "Schwarzbraun ist die Haselnuss"
-# DLC 12 / "Allied Radio Music Pack"
- from_glen_to_glen:0 "From Glen to Glen"
- the_man_on_the_british_countryside:0 "The Man on the British Countryside"
- dance_your_troubles_away:0 "Dance Your Troubles Away"
- winter_came_spring:0 "Winter Came Spring"
-# DLC 13 / Sabaton Soundtrack
- hearts_of_iron:0 "Hearts of Iron"
- night_witches:0 "Night Witches"
- primo_victoria:0 "Primo Victoria"
- stalingrad:0 "Stalingrad"
- wolfpack:0 "Wolfpack"
-### DLC Together for Victory
- heroesofelalamein:0 "Les héros d'El-Alamein"
- londoninflames:0 "Londres en flammes"
- operationcompas:0 "Opération Compass"
+
+ # DLC 020 - Death or Dishonor
+ Aggression:0 "Agression"
+ Escalation:0 "Escalade"
+ Retribution:0 "Vengeance"
+
+ # DLC 023 - Man the Gun
+ claustrophobic_march:0 "Marche claustrophobe"
+ communist_america:0 "Amérique communiste"
+ confederate_flags:0 "Drapeaux confédérés"
+ democratic_movements:0 "Mouvements démocratiques"
+
+ # HOI2 Soundtrack
+ achtungpanzer:0 "Achtung Panzer !"
+ astateofgrace:0 "État de grâce"
+ happymarch:0 "Marche joyeuse"
+ heartsofiron2overturemenu:0 "Hearts of Iron II – ouverture"
+ hoilero:0 "Hoilero"
+ japanoverture:0 "Ouverture japonaise"
+ kriegsgewitter:0 "Kriegsgewitter"
+ leavingshore:0 "En quittant la côte"
+ lullabyofwar:0 "Berceuse de guerre"
+ marchtothefront:0 "Marche vers le front"
+ montgomerysmarch:0 "Marche de Montgomery"
+ rafheroesofthesky:0 "R.A.F. – les héros du ciel"
+ stalingradadagioindminor:0 "Stalingrad – adagio en ré mineur"
+ the101stairborne:0 "La 101e Aéroportée"
+ war:0 "Guerre"
+ variationsontherussianthem:0 "Variations sur le thème russe"
+
+ # HOI3 Soundtrack
+ alliesfaction:0 "Faction des Alliés"
+ alotofseactions:0 "Engagement en mer"
+ axis1march:0 "Marche de l'Axe"
+ bigairforce:0 "Grande force aérienne"
+ bigfleet:0 "Grande flotte"
+ bombingthem:0 "En les bombardant"
+ epicbattle:0 "Bataille épique"
+ hoi3maintheme:0 "Thème principal"
+ hymnfortheoneslostatsea:0 "Hymne pour ceux perdus en mer"
+ landactions:0 "Engagement terrestre"
+ lettersfromhome:0 "Lettres de la maison"
+ lotsofbattles:0 "Combats incessants"
+ offensive:0 "Offensive"
+ sovietsuite_finale:0 "Suite soviétique – fin"
+ sovietsuite_part2:0 "Suite soviétique – partie 2"
+ threatenedwhileatpeace:0 "Menacés"
+ unitednations:0 "Nations unies"
+ unitylow:0 "Unité faible"
+ wearefree:0 "Nous sommes libres"
+
+ # NEW MUSIC NAMES HERE BELOW
