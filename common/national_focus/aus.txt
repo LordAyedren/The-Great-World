@@ -759,7 +759,7 @@ ai_will_do = {
  factor = 100
  } 
 completion_reward = { 
-add_ideas= AUS_multi-linguistic_nation
+add_stability= .05
  } 
 
  } 
