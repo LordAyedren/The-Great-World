@@ -15,6 +15,12 @@ x = 22
 y = 1
 cost = 10
 available_if_capitulated = yes 
+available = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
 prerequisite = { focus = AUS_stabilizingthecountry } 
 mutually_exclusive = { focus = AUS_socialconcessions } 
 ai_will_do = { 
@@ -476,12 +482,15 @@ id = austria.2
 #Focus for One Peoples Propaganda
 focus = { 
 id = AUS_onepeoplespropaganda
-icon = GFX_goal_unknown
+icon = GFX_goal_generic_national_unity
 x = 23
 y = 5
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_silenceprotestors } 
+completion_reward = { 
+add_stability= 0.05
+ } 
 ai_will_do = { 
  factor = 1
  } 
@@ -491,12 +500,17 @@ ai_will_do = {
 #Focus for Silence Protestors
 focus = { 
 id = AUS_silenceprotestors
-icon = GFX_goal_unknown
+icon = GFX_focus_CZE_german_puppet
 x = 23
 y = 4
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_convertthebalkans } 
+completion_reward = { 
+add_stability= -0.05
+add_political_power= 75
+ } 
+
 ai_will_do = { 
  factor = 1
  } 
@@ -572,6 +586,10 @@ y = 3
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_onenationonelanguage } 
+completion_reward = { 
+add_stability= -0.10
+add_political_power= 75
+ } 
 ai_will_do = { 
  factor = 1
  } 
@@ -699,8 +717,15 @@ icon = GFX_goal_generic_intelligence_exchange
 x = 17
 y = 3
 cost = 10
-available_if_capitulated = yes 
+available_if_capitulated = no 
 prerequisite = { focus = AUS_multilinguisticsupport } 
+bypass = {
+			72 = { is_owned_by = AUS }
+			75 = { is_owned_by = AUS }
+			74 = { is_owned_by = AUS }
+			9 = { is_owned_by = AUS }
+			69 = { is_owned_by = AUS }
+		}
 ai_will_do = { 
  factor = 1
  } 
@@ -787,9 +812,16 @@ x = 18
 y = 1
 cost = 10
 available_if_capitulated = yes 
+available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+				has_government = neutrality
+				is_puppet = no
+				
+}
+		}
 prerequisite = { focus = AUS_stabilizingthecountry } 
-mutually_exclusive = { focus = AUS_astronggovernment } 
-mutually_exclusive = { focus = AUS_astronggovernment } 
 mutually_exclusive = { focus = AUS_astronggovernment } 
 ai_will_do = { 
  factor = 10
