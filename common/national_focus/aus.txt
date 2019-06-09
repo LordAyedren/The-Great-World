@@ -529,9 +529,9 @@ prerequisite = { focus = AUS_onepeoplespropaganda }
 ai_will_do = { 
  factor = 100
  } 
-completion_reward = { 
-add_ideas= AUS_AOSP_Services
- } 
+completion_reward = {
+			add_ideas = CHI_public_works
+		}
 
  } 
 
@@ -568,12 +568,12 @@ prerequisite = { focus = AUS_invitethegreeks }
 ai_will_do = { 
  factor = 1
  } 
-completion_reward = { 
-create_wargoal= { 
-type = puppet_everything 
-target = BUL
-}
- } 
+completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GRE
+			}
+		}
 
  } 
 
@@ -614,7 +614,7 @@ add_to_faction= GRE
 
  } 
 
-#Focus for Invite the Serbs
+#Focus for Invite The Serbs
 focus = { 
 id = AUS_invitetheserbs
 icon = GFX_goal_generic_demand_territory
@@ -632,7 +632,7 @@ add_to_faction= SER
 
  } 
 
-#Focus for Invite the Albanians
+#Focus for Invite The Albanians
 focus = { 
 id = AUS_invitethealbanians
 icon = GFX_goal_generic_demand_territory
@@ -650,10 +650,10 @@ add_to_faction= ALB
 
  } 
 
-#Focus for Join The Entente
+#Focus for Join The Allies
 focus = { 
-id = AUS_jointheentente
-icon = GFX_focus_chi_reach_out_to_france
+id = AUS_jointheallies
+icon = GFX_focus_chi_british_cooperation
 x = 16
 y = 7
 cost = 10
@@ -705,7 +705,7 @@ ai_will_do = {
  factor = 10
  } 
 completion_reward = { 
-add_ideas= AUS_Austrian_Concordant
+add_political_power= 150
  } 
 
  } 
@@ -719,7 +719,7 @@ y = 3
 cost = 10
 available_if_capitulated = no 
 prerequisite = { focus = AUS_multilinguisticsupport } 
-bypass = {
+available = {
 			72 = { is_owned_by = AUS }
 			75 = { is_owned_by = AUS }
 			74 = { is_owned_by = AUS }
@@ -744,6 +744,12 @@ y = 4
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = AUS_thebohemiandeal } 
+available = {
+			70 = { is_owned_by = AUS }
+			664 = { is_owned_by = AUS }
+			71 = { is_owned_by = AUS }
+			73 = { is_owned_by = AUS }
+		}
 ai_will_do = { 
  factor = 10
  } 
@@ -761,6 +767,10 @@ x = 17
 y = 5
 cost = 10
 available_if_capitulated = yes 
+available = {
+			109 = { is_owned_by = AUS }
+			103 = { is_owned_by = AUS }
+		}
 prerequisite = { focus = AUS_theslovakiantreaty } 
 ai_will_do = { 
  factor = 10
@@ -784,7 +794,7 @@ ai_will_do = {
  factor = 90
  } 
 completion_reward = { 
-add_ideas= AUS_one_language
+add_stability= -0.05
  } 
 
  } 
