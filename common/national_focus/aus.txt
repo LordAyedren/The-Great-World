@@ -878,5 +878,67 @@ add_to_faction= ROM
 
  } 
 
+
+#Focus for Foreign Investors
+focus = { 
+id = AUS_foreign_investors
+icon = GFX_goal_generic_intelligence_exchange
+x = 20
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = AUS_proudworkers } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+
+#Focus for Stimulate The Economy
+focus = { 
+id = AUS_stimulate_the_economy
+icon = GFX_focus_mex_privatisation
+x = 20
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = AUS_foreign_investors } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Subsidize The Farmers
+focus = { 
+id = AUS_subsidize_the_farmers
+icon = GFX_focus_mex_privatisation
+x = 19
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = AUS_stimulate_the_economy} 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Increase Employment
+focus = { 
+id = AUS_increase_employment
+icon = GFX_focus_mex_privatisation
+x = 21
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = AUS_stimulate_the_economy} 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
 #End of focuses 
  }
