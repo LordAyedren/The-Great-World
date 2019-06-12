@@ -913,7 +913,7 @@ ai_will_do = {
 #Focus for Subsidize The Farmers
 focus = { 
 id = AUS_subsidize_the_farmers
-icon = GFX_focus_mex_privatisation
+icon = GFX_goal_generic_construction2
 x = 19
 y = 5
 cost = 10
