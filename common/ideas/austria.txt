@@ -1,7 +1,7 @@
 ideas = {
 
 	country = {
-		great_depression = {
+		AUS_great_depression = {
 			picture = usa_great_depression_3
 			
 			allowed = {
@@ -22,7 +22,7 @@ ideas = {
 				local_resources_factor = -0.2
 			}
 		}
-		great_depression_2 = {
+		AUS_great_depression_2 = {
 			picture = usa_great_depression_2
 			
 			allowed = {
@@ -43,7 +43,7 @@ ideas = {
 				local_resources_factor = -0.15
 			}
 		}
-		great_depression_3 = {
+		AUS_great_depression_3 = {
 			picture = usa_great_depression
 			
 			allowed = {
@@ -64,43 +64,23 @@ ideas = {
 				local_resources_factor = -0.1
 			}
 		}
-		USA_limited_intervention = {
-			picture = generic_production_bonus
+
+		AUS_economic_growth = {
+			picture = usa_great_depression
 			
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
-				has_government = democratic
+				always = yes
 			}
 
 			removal_cost = -1
 			
 			modifier = {
-				join_faction_tension = -0.25
-				send_volunteers_tension = -0.35
-				guarantee_tension = -0.2
-				mobilization_laws_cost_factor = 1
-				economy_cost_factor = 1
-			}
-		}
-		USA_neutrality_act = {
-			picture = generic_production_bonus
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = democratic
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				join_faction_tension = 0.25
-				send_volunteers_tension = 0.5
-				guarantee_tension = 0.5
+				consumer_goods_factor = -0.10
+				conscription_factor = 0.1
+				local_resources_factor = 0.2
 			}
 		}

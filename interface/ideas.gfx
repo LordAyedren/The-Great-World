@@ -4003,4 +4003,32 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/idea_mtg_naval_treaty_adherent_reduced.dds"
 	}
 	
+
+
+	spriteType = {
+		name = "GFX_idea_aus_great_depression"
+		texturefile = "gfx/interface/ideas/great_depression.dds"
+	}
+	
+
+
+	spriteType = {
+		name = "GFX_idea_aus_great_depression_2"
+		texturefile = "gfx/interface/ideas/idea_usa_great_depression_2.dds"
+	}
+	
+
+
+	spriteType = {
+		name = "GFX_idea_aus_great_depression_3"
+		texturefile = "gfx/interface/ideas/idea_usa_great_depression_3.dds"
+	}
+	
+
+
+	spriteType = {
+		name = "GFX_idea_aus_economic_growth"
+		texturefile = "gfx/interface/ideas/great_depression.dds"
+	}
+	
 }

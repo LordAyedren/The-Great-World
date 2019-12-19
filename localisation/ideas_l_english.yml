@@ -2589,3 +2589,13 @@
  GER_carl_friedrich_goerdeler:0 "Carl Friedrich Goerdeler"
  GER_julius_leber:0 "Julius Leber"
  GER_theodor_heuss:0 "Theodor Heuss"
+ AUS_great_depression:0 "Ruined Economy"
+ AUS_great_depression_desc:0 "Test"
+ AUS_great_depression_2:0 "Bad Economy"
+ AUS_great_depression_2_desc:0 "Test"
+ AUS_great_depression_3:0 "Poor Economy"
+ AUS_great_depression_3_desc:0 "Test"
+ AUS_economic_growth:0 "Economic Growth"
+ AUS_economic_growth_desc:0 "Test"
+
+
