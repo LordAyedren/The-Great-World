@@ -4051,4 +4051,20 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/idea_rom_balkan_dominance.dds"
 	}
 
+	spriteType = {
+		name = "GFX_idea_chi_army_corruption"
+		texturefile = "gfx/interface/ideas/idea_chi_army_corruption.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_chi_army_corruption2"
+		texturefile = "gfx/interface/ideas/idea_chi_army_corruption2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_chi_army_corruption3"
+		texturefile = "gfx/interface/ideas/idea_chi_army_corruption3.dds"
+	}
+
 }
+
