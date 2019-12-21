@@ -8,15 +8,15 @@ focus_tree = {
 	default = yes
 	reset_on_civilwar = no
 
-	#Focus for Placeholder6
+	#Focus for Heightened Conscription
 	focus = {
-		id = generic_placeholder6
-		icon = GFX_goal_unknown
+		id = generic_heightenedconscription
+		icon = GFX_focus_YUG_pan_slavic_congress
 		x = 19
 		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = generic_placeholder5 }
+		prerequisite = { focus = generic_seizethemeansofproduction }
 		ai_will_do = {
 			factor = 1
 		}
@@ -61,6 +61,7 @@ focus_tree = {
 						}
 					}
 				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -88,6 +89,7 @@ focus_tree = {
 						}
 					}
 				}
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -108,6 +110,69 @@ focus_tree = {
 		prerequisite = { focus = generic_industrialeffort }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes	
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}													
+			}	
 		}
 	}
 
@@ -233,24 +298,24 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Placeholder2
+	#Focus for For The King
 	focus = {
-		id = generic_placeholder2
-		icon = GFX_goal_unknown
+		id = generic_fortheking
+		icon = GFX_focus_generic_support_the_left_right
 		x = 13
 		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = generic_placeholder }
+		prerequisite = { focus = generic_theinfluenceofaking }
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	#Focus for Placeholder3
+	#Focus for Draft New Constitution
 	focus = {
-		id = generic_placeholder3
-		icon = GFX_goal_unknown
+		id = generic_draftnewconstitution
+		icon = GFX_focus_generic_treaty
 		x = 17
 		y = 4
 		cost = 10
@@ -261,10 +326,10 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Placeholder5
+	#Focus for Seize the Means of Production
 	focus = {
-		id = generic_placeholder5
-		icon = GFX_goal_unknown
+		id = generic_seizethemeansofproduction
+		icon = GFX_focus_eng_crush_the_dream
 		x = 19
 		y = 4
 		cost = 10
@@ -274,7 +339,6 @@ focus_tree = {
 			factor = 1
 		}
 	}
-
 	#Focus for Military Youth
 	focus = {
 		id = generic_militaryyouth
@@ -306,10 +370,10 @@ focus_tree = {
 		}		
 	}
 
-	#Focus for Placeholder
+	#Focus for The Influence Of A King
 	focus = {
-		id = generic_placeholder
-		icon = GFX_goal_unknown
+		id = generic_theinfluenceofaking
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 13
 		y = 4
 		cost = 10
@@ -319,6 +383,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
+
 
 	#Focus for Long Term Investment
 	focus = {
@@ -433,6 +498,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = gen_industrial_efficiency_idea
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}	
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}	
+		}		
 	}
 
 	#Focus for Air Effort
@@ -445,16 +522,54 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_militaryindustrialcomplex }
 		ai_will_do = {
-			factor = 1
+			factor = 1	
+		}		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
 		}
 	}
-
 
 	#Focus for Industrial Effort 1
 	focus = {
 		id = generic_industrialeffort1
 		icon = GFX_focus_generic_industry_1
-		x = 4
+		x = 5
 		y = 5
 		cost = 10
 		available_if_capitulated = yes
@@ -463,21 +578,145 @@ focus_tree = {
 		ai will_do = {
 			factor = 1
 		}
-	}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}			
 
 	#Focus for Industrial Effort 2
 	focus = {
 		id = generic_industrialeffort2
 		icon = GFX_focus_generic_industry_2
-		x = 6
-		y = 5
+		x = 5
+		y = 6
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_industrialeffort1 }
 		ai_will_do = {
 			factor = 1
 		}
-	}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}		
 
 	#Focus for Aluminium Production
 	focus = {
@@ -491,6 +730,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {		
+			random_owned_controlled_state = {
+				add_resource= { 
+				type = aluminium
+				amount = 16
+				}
+			}
+		}				
 	}
 
 	#Focus for Resource Efficiency
@@ -509,6 +756,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = gen_resource_efficiency_idea
+		}		
 	}
 
 	#Focus for Steel Mines
@@ -523,6 +773,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {		
+			random_owned_controlled_state = {
+				add_resource= { 
+				type = steel
+				amount = 16
+				}
+			}
+		}		
 	}
 
 	#Focus for Rare Metals
@@ -537,6 +795,20 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {		
+			random_owned_controlled_state = {
+				add_resource= { 
+				type = tungsten
+				amount = 8
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource= { 
+				type = chromium
+				amount = 8
+				}
+			}
+		}			
 	}
 
 	#Focus for Workers Revolution
@@ -610,9 +882,47 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}	
+		}		
 	}
-
-
 
 	#Focus for Motorized Effort
 	focus = {
@@ -626,6 +936,44 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}	
+		}				
 	}
 
 	#Focus for Industrial Effort 3
@@ -633,14 +981,106 @@ focus_tree = {
 		id = generic_industrialeffort3
 		icon = GFX_focus_generic_industry_3
 		x = 8
-		y = 5
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_industrialeffort2 }
 		ai_will_do = {
 			factor = 1
 		}
-	}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
 
 	#Focus for Nationalism
 	focus = {
@@ -695,20 +1135,84 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes	
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}													
+			}	
+		}		
 	}
 
 	#Focus for Mastery of Industry
 	focus = {
 		id = generic_masteryofindustry
 		icon = GFX_focus_research2
-		x = 6
-		y = 6
+		x = 10
+		y = 8
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = generic_industrialeffort3 
 			focus = generic_steelmines 
 			focus = generic_raremetals 
+			focus = generic_militaryindustrialeffortii
 		}
 		ai_will_do = {
 			factor = 1
@@ -727,6 +1231,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_politicaleffort }
+		mutually_exclusive = { focus = generic_liberty }
 		ai_will_do = {
 			factor = 1
 		}
@@ -744,6 +1249,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_politicaleffort }
+		mutually_exclusive = { focus = generic_authoritarianism }
 		ai_will_do = {
 			factor = 1
 		}
@@ -765,6 +1271,69 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes	
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}													
+			}	
+		}		
 	}
 
 	#Focus for Divine Right
@@ -827,7 +1396,7 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = generic_jointheentente 
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = { pl
 			focus = generic_democraticregimes 
 		}
 		ai_will_do = {
@@ -840,33 +1409,19 @@ focus_tree = {
 		id = generic_jointheentente
 		icon = GFX_focus_chi_reach_out_to_france
 		x = 17
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = generic_democraticregimes }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Democratic Regimes
-	focus = {
-		id = generic_democraticregimes
-		icon = GFX_goal_support_democracy
-		x = 17
 		y = 7
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_globalpolitics }
 		mutually_exclusive = { 
-			focus = generic_sidewithitaly 
-		}
-		mutually_exclusive = { 
 			focus = generic_sidewiththekaiser 
 		}
 		mutually_exclusive = { 
-			focus = generic_ 
+			focus = generic_sidewithitaly 
 		}
+		mutually_exclusive = { 
+			focus = generic_allytheamericancommune
+		}			
 		ai_will_do = {
 			factor = 1
 		}
@@ -881,10 +1436,10 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = generic_placeholder2 
+			focus = generic_fortheking 
 			focus = generic_militaryyouth 
-			focus = generic_placeholder4 
-			focus = generic_placeholder6 
+			focus = generic_capitalistinvestors 
+			focus = generic_heightenedconscription 
 		}
 		mutually_exclusive = { focus = generic_ourownpath }
 		ai_will_do = {
@@ -963,15 +1518,15 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Placeholder4
+	#Focus for Capitalist Investors
 	focus = {
-		id = generic_placeholder4
-		icon = GFX_goal_unknown
+		id = generic_capitalistinvestors
+		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = 17
 		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = generic_placeholder3 }
+		prerequisite = { focus = generic_draftnewconstitution }
 		ai_will_do = {
 			factor = 1
 		}
@@ -987,11 +1542,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 5
+			army_experience = 50
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -1871,7 +2426,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 1
 		y = 3
-		cost = 15
+		cost = 18
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_landclearence }
 		mutually_exclusive = { focus = generic_longterminvestment }
@@ -1884,6 +2439,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
+						include_locked = yes
 					}
 					OR = {
 						is_in_home_area = yes
@@ -1893,6 +2449,7 @@ focus_tree = {
 									free_building_slots = {
 										building = industrial_complex
 										size > 0
+										include_locked = yes
 									}
 									is_in_home_area = yes
 								}
@@ -1900,6 +2457,7 @@ focus_tree = {
 						}
 					}
 				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1911,6 +2469,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
+						include_locked = yes
 					}
 					OR = {
 						is_in_home_area = yes
@@ -1920,6 +2479,7 @@ focus_tree = {
 									free_building_slots = {
 										building = industrial_complex
 										size > 0
+										include_locked = yes
 									}
 									is_in_home_area = yes
 								}
@@ -1927,6 +2487,7 @@ focus_tree = {
 						}
 					}
 				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1938,6 +2499,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
+						include_locked = yes
 					}
 					OR = {
 						is_in_home_area = yes
@@ -1947,6 +2509,7 @@ focus_tree = {
 									free_building_slots = {
 										building = industrial_complex
 										size > 0
+										include_locked = yes
 									}
 									is_in_home_area = yes
 								}
@@ -1954,11 +2517,92 @@ focus_tree = {
 						}
 					}
 				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
 			}
-		}	
+		}
 	}
+	
+	#Focus for Land Clearence I
+	focus = {
+		id = generic_landclearencei
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = generic_industrialefficiency }
+		mutually_exclusive = { focus = generic_industrialeffort1 }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Land Clearence II
+	focus = {
+		id = generic_landclearenceii
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = generic_landclearencei }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Land Clearence III
+	focus = {
+		id = generic_landclearenceiii
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = generic_landclearenceii }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Future Proofed Industry
+	focus = {
+		id = generic_futureproofedindustry
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = generic_landclearenceiii }
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	#Focus for Ally The American Commune
+	focus = {
+		id = generic_allytheamericancommune
+		icon = GFX_focus_generic_join_comintern
+		x = 19
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = generic_globalpolitics }
+		mutually_exclusive = { 
+			focus = generic_jointheentente 
+		}
+		mutually_exclusive = { 
+			focus = generic_sidewiththekaiser 
+		}
+		mutually_exclusive = { 
+			focus = generic_sidewithitaly 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}				
