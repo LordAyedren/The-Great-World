@@ -167,6 +167,9 @@ set_politics = {
 	elections_allowed = no
 }
 
+create_faction = ITA_fascistleague_faction
+add_to_faction = ITA
+add_to_faction = BUL
 
 
 

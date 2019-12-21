@@ -821,9 +821,16 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_thereds }
+		available = {
+			is_puppet = no
+			communism > 0.4
+		}			
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			set_politics = { ruling_party = communism }
+		}				
 	}
 
 	#Focus for March On The Capital
@@ -835,6 +842,10 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_nationalism }
+		available = {
+			is_puppet = no
+			fascism > 0.4
+		}			
 		ai_will_do = {
 			factor = 1
 
@@ -1350,6 +1361,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = 
+				days = 720
+			}
+			add_popularity= { 
+			ideology = neutrality 
+			popularity = 0.1 
+			}
+		}
 	}
 
 	#Focus for Democratic Wing
@@ -1365,6 +1386,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = 
+				days = 720
+			}
+			add_popularity= { 
+			ideology = democratic 
+			popularity = 0.1 
+			}
+		}
 	}
 
 	#Focus for The Reds
@@ -1379,6 +1410,16 @@ focus_tree = {
 		mutually_exclusive = { focus = generic_democraticwing }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = 
+				days = 720
+			}
+			add_popularity= { 
+			ideology = communism 
+			popularity = 0.1 
+			}
 		}
 	}
 
@@ -1400,9 +1441,16 @@ focus_tree = {
 		mutually_exclusive = { pl
 			focus = generic_democraticregimes 
 		}
+		available = {
+			is_in_faction = no
+		}			
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			join_faction = { GER_central_powers
+			}
+		}			
 	}
 
 	#Focus for Join the Entente
@@ -1422,7 +1470,10 @@ focus_tree = {
 		}
 		mutually_exclusive = { 
 			focus = generic_allytheamericancommune
-		}			
+		}
+		available = {
+			is_in_faction = no
+		}						
 		ai_will_do = {
 			factor = 1
 		}
@@ -1446,6 +1497,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = 150
+		}			
 	}
 
 	#Focus for Side With Italy
@@ -1466,6 +1520,9 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = generic_democraticregimes 
 		}
+		available = {
+			is_in_faction = no
+		}			
 		ai_will_do = {
 			factor = 1
 		}
@@ -1486,6 +1543,9 @@ focus_tree = {
 			focus = generic_militaryyouth 
 		}
 		mutually_exclusive = { focus = generic_globalpolitics }
+		available = {
+			is_in_faction = no
+		}			
 		ai_will_do = {
 			factor = 1
 		}
@@ -1500,8 +1560,15 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_divineright }
+		available = {
+			is_puppet = no
+			neutrality > 0.4
+		}			
 		ai_will_do = {
 			factor = 1
+		}	
+		completion_reward = {
+			set_politics = { ruling_party = neutrality }			
 		}
 	}
 
@@ -1514,11 +1581,17 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_democraticwing }
+		available = {
+			is_puppet = no
+			democratic > 0.4
+		}			
 		ai_will_do = {
 			factor = 1
 		}
-	}
-
+		completion_reward = {		
+			set_politics = { ruling_party = democratic }
+		}
+	}		
 	#Focus for Capitalist Investors
 	focus = {
 		id = generic_capitalistinvestors
@@ -2541,6 +2614,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Land Clearence II
@@ -2555,6 +2686,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Land Clearence III
@@ -2568,6 +2757,120 @@ focus_tree = {
 		prerequisite = { focus = generic_landclearenceii }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}			
 		}
 	}
 
@@ -2603,6 +2906,9 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = generic_sidewithitaly 
 		}
+		available = {
+			is_in_faction = no
+		}			
 		ai_will_do = {
 			factor = 1
 		}

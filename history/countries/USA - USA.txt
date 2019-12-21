@@ -175,6 +175,9 @@ add_ideas = {
 	home_of_the_free
 }
 
+create_faction = USA_americancommune_faction
+add_to_faction = USA
+
 1939.1.1 = {
 
 	set_politics = {
