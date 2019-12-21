@@ -2589,6 +2589,7 @@
  GER_carl_friedrich_goerdeler:0 "Carl Friedrich Goerdeler"
  GER_julius_leber:0 "Julius Leber"
  GER_theodor_heuss:0 "Theodor Heuss"
+
  AUS_great_depression:0 "Ruined Economy"
  AUS_great_depression_desc:0 "Test"
  AUS_great_depression_2:0 "Bad Economy"
@@ -2597,5 +2598,22 @@
  AUS_great_depression_3_desc:0 "Test"
  AUS_economic_growth:0 "Economic Growth"
  AUS_economic_growth_desc:0 "Test"
+ AUS_ethnic_tension:0 "Ethnic Resistance"
+ AUS_ethnic_tension_desc:0 "Test"
+ AUS_ethnic_tension2:0 "Ethnic Resistance"
+ AUS_ethnic_tension2_desc:0 "Test"
+ AUS_ethnic_tension3:0 "Ethnic Resistance"
+ AUS_ethnic_tension3_desc:0 "Test"
+ AUS_ethnic_domination:0 "Ethnic Domination"
+ AUS_ethnic_domination_desc:0 "Test"
+
+ AUS_army_corruption_1:0 "Abysmal Army"
+ AUS_army_corruption_1_desc:0 "Test"
+
+ AUS_army_corruption_2:0 "Poor Army"
+ AUS_army_corruption_2_desc:0 "Test"
+
+ AUS_army_corruption_3:0 "Expert Army"
+ AUS_army_corruption_3_desc:0 "Test"
 
 

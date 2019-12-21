@@ -16,6 +16,8 @@ set_technology = {
 
 add_ideas = {
 	aus_great_depression
+	aus_ethnic_tension
+	aus_army_corruption_1
 	}
 
 set_politics = {

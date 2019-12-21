@@ -4028,7 +4028,27 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_idea_aus_economic_growth"
-		texturefile = "gfx/interface/ideas/great_depression.dds"
+		texturefile = "gfx/interface/ideas/idea_generic_foreign_capital.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_idea_aus_ethnic_tension"
+		texturefile = "gfx/interface/ideas/idea_chi_war_of_resistance3.dds"
+	}
+
+spriteType = {
+		name = "GFX_idea_aus_ethnic_tension2"
+		texturefile = "gfx/interface/ideas/idea_chi_war_of_resistance2.dds"
+	}
+
+spriteType = {
+		name = "GFX_idea_aus_ethnic_tension3"
+		texturefile = "gfx/interface/ideas/idea_chi_war_of_resistance.dds"
+	}
+
+spriteType = {
+		name = "GFX_idea_aus_ethnic_domination"
+		texturefile = "gfx/interface/ideas/idea_rom_balkan_dominance.dds"
+	}
+
 }
