@@ -239,7 +239,7 @@ set_politics = {
 
 }
 
-create_faction = Axis
+create_faction = GER_central_powers_faction
 add_to_faction = GER
 
 

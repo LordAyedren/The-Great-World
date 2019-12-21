@@ -599,7 +599,7 @@
  GER_rocketry_idea:0 "German Rocketry"
  triumphant_will:0 "Triumphant Will"
  militarized_schools:0 "Militarized Schools"
- collectivist_ethos_focus:0 "Collectivist Ethos"
+ collectivist_ethos_focus:0 "Authoritarianism"
  liberty_ethos_focus:0 "Liberty Ethos"
  militarism_focus:0 "Militarism"
  military_youth_focus:0 "Military Youth"
@@ -2589,6 +2589,9 @@
  GER_carl_friedrich_goerdeler:0 "Carl Friedrich Goerdeler"
  GER_julius_leber:0 "Julius Leber"
  GER_theodor_heuss:0 "Theodor Heuss"
+
+ gen_industrial_efficiency_idea:0 "Industrial Efficiency"
+ gen_resource_efficiency_idea:0 "Resource Efficiecny"
 
  AUS_great_depression:0 "Ruined Economy"
  AUS_great_depression_desc:0 "Test"

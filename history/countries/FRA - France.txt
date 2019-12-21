@@ -139,6 +139,9 @@ set_technology = {
 
 set_convoys = 300
 
+create_faction = Entente
+add_to_faction = SOV
+
 
 set_politics = {
 

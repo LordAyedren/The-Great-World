@@ -575,6 +575,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_industrialefficiency } 
 		prerequisite = { focus = generic_aluminiumproduction }
+		mutually_exclusive = { focus = generic_landclearencei }
 		ai will_do = {
 			factor = 1
 		}
