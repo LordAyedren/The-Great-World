@@ -1,9 +1,0 @@
-name = "Man the Guns"
-archive = "dlc/dlc023_man_the_guns/dlc023.zip"
-steam_id = "815460"
-pops_id = "hoi4_dlc023_man_the_guns"
-affects_checksum = yes
-affects_compatability = no
-checksum = "c934d47569a35e6446be08cc1093a3cb"
-third_party_content = no
-category = "expansion"
