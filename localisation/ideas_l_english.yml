@@ -2595,6 +2595,9 @@
  future_proofed_industry_idea:0 "Future Proofed Industry"
  democratic_idea:0 "Democratic Officials"
  monarchism_idea:0 "King in the Government"
+ faction_creation_idea:0 "Faction Creation"
+ faction_creation_idea_desc:0 "We may create facitons"
+
 
  AUS_great_depression:0 "Ruined Economy"
  AUS_great_depression_desc:0 "Test"

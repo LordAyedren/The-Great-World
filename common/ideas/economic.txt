@@ -83,7 +83,7 @@ ideas = {
 			
 			modifier = {
 				#justify_war_goal_time = -0.25
-				communism_drift = 0.1
+				neutrality_drift = 0.1
 			}
 		}
 
@@ -103,6 +103,25 @@ ideas = {
 			
 			modifier = {
 				#justify_war_goal_time = -0.25
-				communism_drift = 0.1
+				democratic_drift = 0.1
 			}
 		}						
+
+		faction_creation_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus			
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			rule = {
+				can_create_factions = yes
+			}			
+		}

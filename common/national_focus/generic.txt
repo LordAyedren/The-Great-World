@@ -1427,6 +1427,14 @@ focus_tree = {
 	focus = {
 		id = generic_sidewiththekaiser
 		icon = GFX_focus_ger_revive_kaiserreich
+		available = {
+			is_puppet = no
+			has_government = neutrality
+			GER = {
+				exists = yes
+			}
+			NOT = { has_war_with = GER }
+		}					
 		x = 13
 		y = 7
 		cost = 10
@@ -1448,15 +1456,22 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			join_faction = { GER_central_powers
-			}
-		}			
+			GER = { country_event = { id = genericfocus.1 } }	
+		}				
 	}
 
 	#Focus for Join the Entente
 	focus = {
 		id = generic_jointheentente
 		icon = GFX_focus_chi_reach_out_to_france
+		available = {
+			is_puppet = no
+			has_government = democratic
+			FRA = {
+				exists = yes
+			}
+			NOT = { has_war_with = FRA }
+		}		
 		x = 17
 		y = 7
 		cost = 10
@@ -1477,6 +1492,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			FRA = { country_event = { id = genericfocus.1 } }	
+		}		
 	}
 
 	#Focus for Global Politics
@@ -1495,7 +1513,7 @@ focus_tree = {
 		}
 		mutually_exclusive = { focus = generic_ourownpath }
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -1506,6 +1524,14 @@ focus_tree = {
 	focus = {
 		id = generic_sidewithitaly
 		icon = GFX_focus_generic_italy_first
+		available = {
+			is_puppet = no
+			has_government = fascism
+			ITA = {
+				exists = yes
+			}
+			NOT = { has_war_with = ITA }
+		}			
 		x = 15
 		y = 7
 		cost = 10
@@ -1526,6 +1552,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			ITA = { country_event = { id = genericfocus.1 } }	
+		}			
 	}
 
 	#Focus for Our Own Path
@@ -1537,9 +1566,9 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = generic_placeholder6 
-			focus = generic_placeholder2 
-			focus = generic_placeholder4 
+			focus = generic_capitalistinvestors
+			focus = generic_fortheking
+			focus = generic_heightenedconscription
 			focus = generic_militaryyouth 
 		}
 		mutually_exclusive = { focus = generic_globalpolitics }
@@ -1547,8 +1576,11 @@ focus_tree = {
 			is_in_faction = no
 		}			
 		ai_will_do = {
-			factor = 1
+			factor = 7
 		}
+		completion_reward = {
+			add_ideas = faction_creation_idea
+		}			
 	}
 
 	#Focus for Seize The Crown
@@ -2904,6 +2936,14 @@ focus_tree = {
 	focus = {
 		id = generic_allytheamericancommune
 		icon = GFX_focus_generic_join_comintern
+		available = {
+			is_puppet = no
+			has_government = communism
+			USA = {
+				exists = yes
+			}
+			NOT = { has_war_with = USA }
+		}					
 		x = 19
 		y = 7
 		cost = 10
@@ -2924,6 +2964,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			USA = { country_event = { id = genericfocus.1 } }	
+		}				
 	}		
 
 	focus = {
