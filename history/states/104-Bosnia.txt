@@ -22,8 +22,8 @@ state={
 			air_base = 2
 		}
 		add_core_of = AUS
-		add_core_of = BOS
-		add_claim_by = BOS
+		add_core_of = CRO
+
 	}
 
 	provinces={
