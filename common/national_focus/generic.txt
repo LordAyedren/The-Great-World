@@ -8,6 +8,8 @@ focus_tree = {
 	default = yes
 	reset_on_civilwar = no
 
+	continuous_focus_position = { x = 50 y = 1700 }	
+
 	#Focus for Heightened Conscription
 	focus = {
 		id = generic_heightenedconscription
@@ -2751,7 +2753,7 @@ focus_tree = {
 		id = generic_landclearenceiii
 		icon = GFX_goal_generic_construct_civilian
 		x = 0
-		y = 11
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_landclearenceii }
@@ -2879,7 +2881,7 @@ focus_tree = {
 		id = generic_futureproofedindustry
 		icon = GFX_goal_generic_production
 		x = 0
-		y = 12
+		y = 8
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_landclearenceiii }
