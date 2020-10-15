@@ -529,6 +529,12 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
+		available = {
+			controls_state = 556
+			controls_state = 660
+			is_subject = no
+		}
+
 		completion_reward = {
 			556 = {
 				add_resource = {
@@ -706,6 +712,10 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
+		ai_will_do = {
+			factor = 8
+		}			
+
 		completion_reward = {
 			}
 		}	
@@ -721,6 +731,10 @@ focus_tree = {
 		cost = 10
 
 		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 2
+		}				
 
 		completion_reward = {
 			create_faction = "ENG_protection_league"

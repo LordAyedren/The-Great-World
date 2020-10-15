@@ -1,0 +1,54 @@
+add_namespace = genericfocus
+
+country_event = {
+	id = genericfocus.1
+	title = genericfocus.1.t
+	desc = genericfocus.1.d
+	picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = genericfocus.1.a
+		ai_chance = { factor = 9 }			
+		add_to_faction = FROM
+		FROM = { country_event = { id = genericfocus.2 }
+		}
+	}
+	
+	option = {
+		name = genericfocus.1.b
+		ai_chance = { factor = 1 }
+		FROM = { 
+			country_event = { id = genericfocus.3 }
+		}
+	}
+}
+
+# Someone - France Accepts Ally Request
+country_event = {
+	id = genericfocus.2
+	title = genericfocus.2.t
+	desc = genericfocus.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = genericfocus.2.a
+	}
+}
+
+# Someone - France denies Ally request
+country_event = {
+	id = genericfocus.3
+	title = genericfocus.3.t
+	desc = genericfocus.3.d
+	picture = GFX_report_event_chamberlain
+
+	is_triggered_only	= yes
+
+	option = {
+		name = genericfocus.3.a
+	}
+}
