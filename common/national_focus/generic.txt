@@ -1450,8 +1450,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			join_faction = { GER_central_powers
-			}
+			GER = { country_event = { id = genericgw.3} }
 		}			
 	}
 
@@ -1479,6 +1478,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			FRA = { country_event = { id = genericgw.0} }
+		}			
 	}
 
 	#Focus for Global Politics
@@ -1497,7 +1499,7 @@ focus_tree = {
 		}
 		mutually_exclusive = { focus = generic_ourownpath }
 		ai_will_do = {
-			factor = 1
+			factor = 8
 		}
 		completion_reward = {
 			add_political_power = 150
