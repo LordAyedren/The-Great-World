@@ -1,0 +1,104 @@
+add_namespace = genericgw
+
+# event string to join the entente
+country_event = {
+	id = genericgw.0
+	title = genericgw.0.t
+	desc = genericgw.0.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.0.a
+		ai_chance = { factor = 100 }		
+		FRA = {
+			add_to_faction = FROM
+		}	
+		FROM = { country_event = { id = genericgw.1} }		
+	}	
+
+	option = {
+		name = genericgw.0.b
+		ai_chance = { factor = 0 }		
+		FROM = { country_event = { id = genericgw.2} }`		
+	}
+}
+
+country_event = {
+	id = genericgw.1
+	title = genericgw.1.t
+	desc = genericgw.1.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.1.a
+		}		
+	}
+}
+
+country_event = {
+	id = genericgw.2
+	title = genericgw.2.t
+	desc = genericgw.2.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.2.a			
+	}
+}
+
+# Event string to join the central powers
+country_event = {
+	id = genericgw.3
+	title = genericgw.3.t
+	desc = genericgw.3.d
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.3.a
+		ai_chance = { factor = 100 }		
+		GER = {
+			add_to_faction = FROM
+		}	
+		FROM = { country_event = { id = genericgw.4} }		
+	}	
+
+	option = {
+		name = genericgw.3.b
+		ai_chance = { factor = 0 }		
+		FROM = { country_event = { id = genericgw.5} }		
+	}
+}
+
+country_event = {
+	id = genericgw.4
+	title = genericgw.4.t
+	desc = genericgw.4.d
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.4.a	
+	}
+}
+
+country_event = {
+	id = genericgw.5
+	title = genericgw.5.t
+	desc = genericgw.5.d
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = genericgw.5.a	
+	}
+}
