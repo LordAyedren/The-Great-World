@@ -177,7 +177,7 @@ add_ideas = {
 
 create_faction = USA_americancommune_faction
 add_to_faction = USA
-add_to_faction = COL
+add_to_faction = VEN
 
 1939.1.1 = {
 

@@ -1554,6 +1554,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			ITA = { country_event = { id = genericgw.6} }
+		}	
 	}
 
 	#Focus for Our Own Path
@@ -2963,6 +2966,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			USA = { country_event = { id = genericgw.9} }
+		}			
 	}	
 	
 	focus = {	
