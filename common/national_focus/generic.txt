@@ -8,6 +8,8 @@ focus_tree = {
 	default = yes
 	reset_on_civilwar = no
 
+	continuous_focus_position = { x = 50 y = 1700 }	
+
 	#Focus for Heightened Conscription
 	focus = {
 		id = generic_heightenedconscription
@@ -1427,14 +1429,14 @@ focus_tree = {
 	focus = {
 		id = generic_sidewiththekaiser
 		icon = GFX_focus_ger_revive_kaiserreich
-		available = {
-			is_puppet = no
-			has_government = neutrality
-			GER = {
-				exists = yes
-			}
-			NOT = { has_war_with = GER }
-		}					
+		available = {	
+			is_puppet = no	
+			has_government = neutrality	
+			GER = {	
+				exists = yes	
+			}	
+			NOT = { has_war_with = GER }	
+		}			
 		x = 13
 		y = 7
 		cost = 10
@@ -1446,7 +1448,7 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = generic_jointheentente 
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = generic_allytheamericancommune
 		}
 		available = {
@@ -1456,22 +1458,22 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			GER = { country_event = { id = genericfocus.1 } }	
-		}				
+			GER = { country_event = { id = genericgw.3} }
+		}			
 	}
 
 	#Focus for Join the Entente
 	focus = {
 		id = generic_jointheentente
 		icon = GFX_focus_chi_reach_out_to_france
-		available = {
-			is_puppet = no
-			has_government = democratic
-			FRA = {
-				exists = yes
-			}
-			NOT = { has_war_with = FRA }
-		}		
+		available = {	
+			is_puppet = no	
+			has_government = democratic	
+			FRA = {	
+				exists = yes	
+			}	
+			NOT = { has_war_with = FRA }	
+		}			
 		x = 17
 		y = 7
 		cost = 10
@@ -1493,8 +1495,8 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			FRA = { country_event = { id = genericfocus.1 } }	
-		}		
+			FRA = { country_event = { id = genericgw.0} }
+		}			
 	}
 
 	#Focus for Global Politics
@@ -1513,7 +1515,7 @@ focus_tree = {
 		}
 		mutually_exclusive = { focus = generic_ourownpath }
 		ai_will_do = {
-			factor = 3
+			factor = 1
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -1524,13 +1526,13 @@ focus_tree = {
 	focus = {
 		id = generic_sidewithitaly
 		icon = GFX_focus_generic_italy_first
-		available = {
-			is_puppet = no
-			has_government = fascism
-			ITA = {
-				exists = yes
-			}
-			NOT = { has_war_with = ITA }
+		available = {	
+			is_puppet = no	
+			has_government = fascism	
+			ITA = {	
+				exists = yes	
+			}	
+			NOT = { has_war_with = ITA }	
 		}			
 		x = 15
 		y = 7
@@ -1552,9 +1554,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
-			ITA = { country_event = { id = genericfocus.1 } }	
-		}			
 	}
 
 	#Focus for Our Own Path
@@ -1576,11 +1575,11 @@ focus_tree = {
 			is_in_faction = no
 		}			
 		ai_will_do = {
-			factor = 7
+			factor = 9
 		}
-		completion_reward = {
-			add_ideas = faction_creation_idea
-		}			
+		completion_reward = {	
+			add_ideas = faction_creation_idea	
+		}						
 	}
 
 	#Focus for Seize The Crown
@@ -2783,7 +2782,7 @@ focus_tree = {
 		id = generic_landclearenceiii
 		icon = GFX_goal_generic_construct_civilian
 		x = 0
-		y = 11
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_landclearenceii }
@@ -2911,7 +2910,7 @@ focus_tree = {
 		id = generic_futureproofedindustry
 		icon = GFX_goal_generic_production
 		x = 0
-		y = 12
+		y = 8
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = generic_landclearenceiii }
@@ -2919,31 +2918,31 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas = future_proofed_industry_idea
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			add_ideas = future_proofed_industry_idea	
+			random_owned_controlled_state = {	
+				add_extra_state_shared_building_slots = 2	
+			}		
+			random_owned_controlled_state = {	
+				add_extra_state_shared_building_slots = 2	
 			}	
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}	
-		}		
-	}			
+			random_owned_controlled_state = {	
+				add_extra_state_shared_building_slots = 2	
+			}		
+		}							
+	}	
 
 	#Focus for Ally The American Commune
 	focus = {
 		id = generic_allytheamericancommune
 		icon = GFX_focus_generic_join_comintern
-		available = {
-			is_puppet = no
-			has_government = communism
-			USA = {
-				exists = yes
-			}
-			NOT = { has_war_with = USA }
-		}					
+		available = {	
+			is_puppet = no	
+			has_government = communism	
+			ITA = {	
+				exists = yes	
+			}	
+			NOT = { has_war_with = USA` }	
+		}		
 		x = 19
 		y = 7
 		cost = 10
@@ -2964,64 +2963,60 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
-			USA = { country_event = { id = genericfocus.1 } }	
-		}				
-	}		
-
-	focus = {
-		id = technology_sharing
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = generic_sidewithitaly focus = generic_allytheamericancommune focus = generic_jointheentente focus = generic_sidewiththekaiser focus = generic_ourownpath }
-		available = {
-			has_war = yes
-			is_in_faction = yes
-			OR = {
-				num_of_factories > 50
-				any_other_country = {
-					is_in_faction_with = ROOT
-					num_of_factories > 50
-				}
-			}
-		}		
-		x = 1
-		y = 1
-		relative_position_id = generic_sidewithitaly
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			if = {
-				limit = {
-					original_research_slots < 3
-				}
-				add_research_slot = 1
-			}
-			if = {
-				limit = {
-					original_research_slots > 2
-				}
-				add_tech_bonus = {
-					name = electronics_bonus
-					bonus = 1.0
-					uses = 1
-					category = electronics
-				}
-				add_tech_bonus = {
-					name = industrial_bonus
-					bonus = 1.0
-					uses = 1
-					category = industry
-				}	
-				add_tech_bonus = {
-					name = infantry_artillery_bonus #@#
-					bonus = 1.0
-					uses = 1
-					category = infantry_weapons
-					category = artillery
-				}				
-			}			
-		}
 	}	
+	
+	focus = {	
+		id = technology_sharing	
+		icon = GFX_goal_generic_scientific_exchange	
+		prerequisite = { focus = generic_sidewithitaly focus = generic_allytheamericancommune focus = generic_jointheentente focus = generic_sidewiththekaiser focus = generic_ourownpath }	
+		available = {	
+			has_war = yes	
+			is_in_faction = yes	
+			OR = {	
+				num_of_factories > 50	
+				any_other_country = {	
+					is_in_faction_with = ROOT	
+					num_of_factories > 50	
+				}	
+			}	
+		}			
+		x = 1	
+		y = 1	
+		relative_position_id = generic_sidewithitaly	
+		cost = 10	
 
+		available_if_capitulated = yes	
+
+		completion_reward = {	
+			if = {	
+				limit = {	
+					original_research_slots < 3	
+				}	
+				add_research_slot = 1	
+			}	
+			if = {	
+				limit = {	
+					original_research_slots > 2	
+				}	
+				add_tech_bonus = {	
+					name = electronics_bonus	
+					bonus = 1.0	
+					uses = 1	
+					category = electronics	
+				}	
+				add_tech_bonus = {	
+					name = industrial_bonus	
+					bonus = 1.0	
+					uses = 1	
+					category = industry	
+				}		
+				add_tech_bonus = {	
+					name = infantry_artillery_bonus #@#	
+					bonus = 1.0	
+					uses = 1	
+					category = infantry_weapons	
+					category = artillery	
+				}					
+			}				
+		}	
+	}				
