@@ -1,0 +1,127 @@
+ideas = {
+	country = {
+		gen_industrial_efficiency_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+
+		gen_resource_efficiency_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+
+		future_proofed_industry_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+
+		monarchism_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				#justify_war_goal_time = -0.25
+				neutrality_drift = 0.1
+			}
+		}
+
+		democratic_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				#justify_war_goal_time = -0.25
+				democratic_drift = 0.1
+			}
+		}						
+
+		faction_creation_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus			
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			rule = {
+				can_create_factions = yes
+			}			
+		}

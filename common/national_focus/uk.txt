@@ -1,0 +1,1308 @@
+focus_tree = {
+	id = british_focus
+	
+	country = { 
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}	
+	
+	default = no
+	
+	continuous_focus_position = { x = 0 y = 1500 }
+
+	reset_on_civilwar = no
+
+	focus = {
+		id = ENG_political_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = ENG_stay_with_the_status_quo
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ENG_political_effort }
+		x = 3
+		y = 1
+		relative_position_id = ENG_political_effort
+		mutually_exclusive = { focus = ENG_reinstate_the_monarchy}
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 9
+		}	
+
+		completion_reward = {
+				add_stability = 0.4	
+				add_war_support = -0.1	
+			}
+		}	
+
+	focus = {
+		id = ENG_reinstate_the_monarchy
+		icon = GFX_focus_generic_home_defense
+		prerequisite = { focus = ENG_political_effort }
+		mutually_exclusive = { focus = ENG_stay_with_the_status_quo}
+		x = -3
+		y = 1
+		relative_position_id = ENG_political_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}	
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = .8
+				add_stability = -0.3
+			}
+			set_politics = { ruling_party = neutrality }
+			}
+		}
+
+	focus = {
+		id = ENG_stabalize_the_monarchy
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = ENG_reinstate_the_monarchy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_reinstate_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_stability = 0.2
+				add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_finalizing_the_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = ENG_stabalize_the_monarchy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_stabalize_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_stability = 0.2
+				add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_what_to_do_with_france
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ENG_anti_french_propaganda }
+		x = 0
+		y = 1
+		relative_position_id = ENG_anti_french_propaganda
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_political_power = 100	
+			}
+		}
+
+	focus = {
+		id = ENG_reclaim_ireland
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ENG_finalizing_the_monarchy }
+		x = 2		
+		y = 1
+		relative_position_id = ENG_finalizing_the_monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = IRE
+				}
+			}
+		}
+
+		focus = {
+		id = ENG_abuse_irish_industry_mil
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_reclaim_ireland }
+		x = 2
+		y = 1
+		relative_position_id = ENG_reclaim_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			controls_state = 135
+			controls_state = 134
+			controls_state = 113
+			is_subject = no
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 4
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = ENG_abuse_irish_industry_civ
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_reclaim_ireland }
+		x = -2
+		y = 1
+		relative_position_id = ENG_reclaim_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			controls_state = 135
+			controls_state = 134
+			controls_state = 113
+			is_subject = no
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 4
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_hire_irish_scientists
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ENG_reclaim_ireland }
+		x = 0		
+		y = 1
+		relative_position_id = ENG_reclaim_ireland
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			controls_state = 135
+			controls_state = 134
+			controls_state = 113
+			is_subject = no
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ENG_irish_scientists
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}		
+	}
+
+	focus = {
+		id = ENG_irish_talks
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ENG_hire_irish_scientists focus = ENG_abuse_irish_industry_mil focus = ENG_abuse_irish_industry_civ }
+		x = 0
+		y = 1
+		relative_position_id = ENG_hire_irish_scientists
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = +10
+		}
+	}	
+
+	focus = {
+		id = ENG_occupy_ireland
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ENG_irish_talks }
+		x = 2
+		y = 1
+		relative_position_id = ENG_irish_talks
+		mutually_exclusive = { focus = ENG_release_ireland }
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -40
+		}
+	}			
+
+	focus = {
+		id = ENG_release_ireland
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ENG_irish_talks }
+		x = -2
+		y = 1
+		relative_position_id = ENG_irish_talks
+		mutually_exclusive = { focus = ENG_occupy_ireland }
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ENG = {
+				set_autonomy = { target = IRE autonomy_state = autonomy_satellite }
+			}
+		}
+	}		
+
+	focus = {
+		id = ENG_integrate_ireland
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ENG_occupy_ireland }
+		x = 0
+		y = 1
+		relative_position_id = ENG_occupy_ireland
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_core = 113
+			add_state_core = 134
+			add_state_core = 135		
+		}
+	}
+
+	focus = {
+		id = ENG_recruit_irishmen
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = ENG_release_ireland }
+		x = 0
+		y = 1
+		relative_position_id = ENG_release_ireland
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 400000		
+		}
+	}		
+
+	focus = {
+		id = ENG_claim_normandy
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			15 = {
+				add_claim_by = ENG
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_claim_aquitaine
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = -2
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			19 = {
+				add_claim_by = ENG
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_colonial_dispute
+		icon = GFX_focus_AST_never_gallipoli_shine
+		prerequisite = { focus = ENG_what_to_do_with_france }
+		x = 2
+		y = 1
+		relative_position_id = ENG_what_to_do_with_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_claim = 461
+			add_state_claim = 462
+			add_state_claim = 513
+			add_state_claim = 458
+			add_state_claim = 459
+			add_state_claim = 460			
+			}
+		}
+
+	focus = {
+		id = ENG_strike_france
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		prerequisite = { focus = ENG_claim_normandy }
+		prerequisite = { focus = ENG_claim_aquitaine }                  
+		prerequisite = { focus = ENG_colonial_dispute }
+		x = 0
+		y = 1
+		relative_position_id = ENG_claim_normandy
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FRA
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_integrate_aquitaine_normandy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ENG_strike_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_strike_france
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			controls_state = 19
+			controls_state = 15
+			is_subject = no
+		}
+
+		completion_reward = {
+			add_state_core = 19
+			add_state_core = 15		
+		}
+	}	
+
+	focus = {
+		id = ENG_rubber_in_africa
+		icon = GFX_goal_tfv_saf_secure_interests_in_africa
+		prerequisite = { focus = ENG_integrate_aquitaine_normandy }
+		x = 0
+		y = 1
+		relative_position_id = ENG_integrate_aquitaine_normandy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			controls_state = 556
+			controls_state = 660
+			is_subject = no
+		}
+
+		completion_reward = {
+			556 = {
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}	
+			660 = {
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_form_the_british_empire
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = ENG_rubber_in_africa focus = ENG_recruit_irishmen focus = ENG_integrate_ireland }
+		x = 2
+		y = 4
+		relative_position_id = ENG_colonial_dispute
+		cost = 5
+
+		available_if_capitulated = yes
+			
+		completion_reward = {
+				create_faction = "ENG_british_empire_faction"
+			}
+		}	
+
+	focus = {
+		id = ENG_anti_french_propaganda
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ENG_finalizing_the_monarchy }
+		x = -3
+		y = 1
+		relative_position_id = ENG_finalizing_the_monarchy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_political_power = -50
+			}
+		}
+	
+	focus = {
+		id = ENG_democratic_bastian
+		prerequisite = { focus = ENG_stay_with_the_status_quo }
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = ENG_stay_with_the_status_quo
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			}
+		}
+
+	focus = {
+		id = ENG_european_democracy
+		prerequisite = { focus = ENG_democratic_bastian }
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = ENG_democratic_bastian
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_bel
+		prerequisite = { focus = ENG_european_democracy }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_european_democracy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = BEL
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_swe
+		prerequisite = { focus = ENG_european_democracy }
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		relative_position_id = ENG_european_democracy
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = SWE
+			}
+		}
+
+	focus = {
+		id = ENG_guarantee_lux
+		prerequisite = { focus = ENG_guarantee_bel }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_guarantee_bel
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = LUX
+			}
+		}	
+
+	focus = {
+		id = ENG_guarantee_ire
+		prerequisite = { focus = ENG_guarantee_swe }
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = ENG_guarantee_swe
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = IRE
+			}
+		}
+
+	focus = {
+		id = ENG_diplomatic_position
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ENG_stay_with_the_status_quo }
+		x = 6
+		y = 1
+		relative_position_id = ENG_stay_with_the_status_quo
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 8
+		}	
+
+		completion_reward = {
+				add_political_power = 100
+			}
+		}
+
+	focus = {
+		id = ENG_go_with_france
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = ENG_diplomatic_position }
+		mutually_exclusive = { focus = ENG_form_protection_league }
+		x = -2
+		y = 1
+		relative_position_id = ENG_diplomatic_position
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 8
+		}			
+
+		completion_reward = {
+			}
+		}	
+
+	focus = {
+		id = ENG_form_protection_league
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ENG_diplomatic_position }
+		mutually_exclusive = { focus = ENG_go_with_france }
+		x = 3
+		y = 1
+		relative_position_id = ENG_diplomatic_position
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 2
+		}				
+
+		completion_reward = {
+			create_faction = "ENG_protection_league"
+			add_war_support = .15
+			}
+		}
+
+	focus = {
+		id = ENG_support_france
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_go_with_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_go_with_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}
+
+	focus = {
+		id = ENG_trade_deals_france
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ENG_support_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_support_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}	
+
+	focus = {
+		id = ENG_technology_sharing
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ENG_trade_deals_france }
+		x = 0
+		y = 1
+		relative_position_id = ENG_trade_deals_france
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}
+
+	focus = {
+		id = ENG_request_faction_members
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ENG_technology_sharing }
+		prerequisite = { focus = ENG_guarantee_ire }
+		prerequisite = { focus = ENG_guarantee_lux }
+		x = -2
+		y = 1
+		relative_position_id = ENG_technology_sharing
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_
+			}
+		}
+
+	focus = {
+		id = ENG_expand_the_league
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = ENG_form_protection_league }
+		x = 0
+		y = 1
+		relative_position_id = ENG_form_protection_league
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 75
+			}
+		}
+
+	focus = {
+		id = ENG_european_members
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = ENG_expand_the_league }
+		x = -1
+		y = 1
+		relative_position_id = ENG_expand_the_league
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 75
+			}
+		}
+
+	focus = {
+		id = ENG_thirdworldmembers
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = ENG_expand_the_league }
+		x = 1
+		y = 1
+		relative_position_id = ENG_expand_the_league
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 75
+			}
+		}
+
+	focus = {
+		id = ENG_invite_belux
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_european_members }
+		x = -2
+		y = 1
+		relative_position_id = ENG_european_members
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = BEL
+			add_to_faction = LUX
+			}
+		}
+
+	focus = {
+		id = ENG_invite_swed
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_european_members }
+		x = 0
+		y = 1
+		relative_position_id = ENG_european_members
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = SWE
+			}
+		}
+
+	focus = {
+		id = ENG_invite_ire
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_european_members }
+		x = -1
+		y = 2
+		relative_position_id = ENG_european_members
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = IRE
+			}
+		}
+
+	focus = {
+		id = ENG_invite_carribian
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_thirdworldmembers }
+		x = 0
+		y = 1
+		relative_position_id = ENG_thirdworldmembers
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = HAI
+			add_to_faction = CUB
+			}
+		}
+
+	focus = {
+		id = ENG_invite_philipines
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_thirdworldmembers }
+		x = 2
+		y = 1
+		relative_position_id = ENG_thirdworldmembers
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = PHI
+			}
+		}
+
+	focus = {
+		id = ENG_invite_south_america
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_thirdworldmembers }
+		x = 1
+		y = 2
+		relative_position_id = ENG_thirdworldmembers
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_to_faction = CHL
+			add_to_faction = URG
+			}
+		}
+
+	focus = { id = ENG_antiottoman icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus =ENG_invite_south_america focus =ENG_invite_ire focus =ENG_technology_sharing } 
+		x = -3 
+		y = 1 
+		relative_position_id =ENG_invite_ire 
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_denounce_abdul
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ENG_antiottoman }
+		x = 0
+		y = 1
+		relative_position_id = ENG_antiottoman
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = .15
+			}
+		}
+
+	focus = {
+		id = ENG_isolate_ottomans
+		icon = GFX_goal_continuous_increase_nu
+		prerequisite = { focus = ENG_denounce_abdul }
+		mutually_exclusive = { focus = ENG_rival_ottomans}
+		x = -2
+		y = 1
+		relative_position_id = ENG_denounce_abdul
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 7
+		}			
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}	
+
+	focus = {
+		id = ENG_rival_ottomans
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = ENG_denounce_abdul }
+		mutually_exclusive = { focus = ENG_isolate_ottomans}
+		x = 2
+		y = 1
+		relative_position_id = ENG_denounce_abdul
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 3
+		}			
+
+		completion_reward = {
+			add_war_support = .15
+			}
+		}
+
+	focus = {
+		id = ENG_protect_middle_east
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = ENG_isolate_ottomans }
+		x = 0
+		y = 1
+		relative_position_id = ENG_isolate_ottomans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_protect_balkans
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = ENG_isolate_ottomans }
+		x = -2
+		y = 1
+		relative_position_id = ENG_isolate_ottomans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			}
+		}
+
+	focus = {
+		id = ENG_constest_balkans
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ENG_rival_ottomans }
+		x = 2
+		y = 1
+		relative_position_id = ENG_rival_ottomans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = .05
+			}
+		}
+
+	focus = {
+		id = ENG_constest_middle_east
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ENG_rival_ottomans }
+		x = -
+		y = 1
+		relative_position_id = ENG_rival_ottomans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = .05
+			}
+		}
+
+	focus = {
+		id = ENG_guerantee_gre
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_protect_balkans }
+		x = 0
+		y = 1
+		relative_position_id = ENG_protect_balkans
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = GRE
+			}
+		}
+
+	focus = {
+		id = ENG_guerantee_alb
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_guerantee_gre }
+		x = 0
+		y = 1
+		relative_position_id = ENG_guerantee_gre
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = ALB
+			}
+		}	
+
+	focus = {
+		id = ENG_guerantee_ser
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_protect_balkans }
+		x = -2
+		y = 1
+		relative_position_id = ENG_protect_balkans
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = SER
+			}
+		}	
+
+	focus = {
+		id = ENG_guerantee_rom
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_guerantee_ser }
+		x = 0
+		y = 1
+		relative_position_id = ENG_guerantee_ser
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = ROM
+			}
+		}	
+
+	focus = {
+		id = ENG_guerantee_arab
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_protect_middle_east }
+		x = 0
+		y = 1
+		relative_position_id = ENG_protect_middle_east
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = SAU
+			give_guarantee = OMA
+			}
+		}
+
+	focus = {
+		id = ENG_guerantee_persia
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = ENG_guerantee_arab }
+		x = 0
+		y = 1
+		relative_position_id = ENG_guerantee_arab
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = PER
+			}
+		}																																																	
+
+	focus = {
+		id = ENG_take_arabia
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_constest_middle_east }
+		x = 0
+		y = 1
+		relative_position_id = ENG_constest_middle_east
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SAU
+				}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = OMA
+				}			
+			}
+		}
+
+	focus = {
+		id = ENG_take_balkans_s
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_constest_balkans }
+		x = 0
+		y = 1
+		relative_position_id = ENG_constest_balkans
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GRE
+				}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ALB
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_take_balkans_n
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_take_balkans_s }
+		x = 0
+		y = 1
+		relative_position_id = ENG_take_balkans_s
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = BUL
+				}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SER
+				}
+			}
+		}
+
+	focus = {
+		id = ENG_take_persia
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ENG_take_arabia }
+		x = 0
+		y = 1
+		relative_position_id = ENG_take_arabia
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PER
+				}
+			}
+		}	
+
+	focus = {
+		id = ENG_influence_turkish_politics
+		icon = GFX_goal_continuous_def_against_influence
+		prerequisite = { focus = ENG_guerantee_rom focus = ENG_guerantee_alb focus = ENG_guerantee_persia focus = ENG_take_persia focus = ENG_take_balkans_n }
+		x = -2
+		y = 2
+		relative_position_id = ENG_take_arabia
+		cost = 8
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+				}
+			}
+		}													
+
+
+
+
+
+
+									
+
+
+
+
+		
+		
+	
