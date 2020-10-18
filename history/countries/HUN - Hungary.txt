@@ -1,4 +1,4 @@
-﻿capital = 43
+﻿capital = 4
 
 oob = "HUN_1936"
 
@@ -147,7 +147,7 @@ set_politics = {
 	ruling_party = neutrality
 	last_election = "1935.3.31"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
 	democratic = 25
@@ -161,29 +161,27 @@ if = {
 		has_dlc = "Death or Dishonor"
 	}
 	create_country_leader = {
-		name = "Miklós Horthy"
-		desc = "POLITICS_MIKLOS_HORTHY_DESC"
-		picture = "Portrait_Hungary_Miklos_Horthy.dds"
-		expire = "1965.1.1"
-		ideology = oligarchism
-		traits = {
-			fascist_sympathies
-			anti_communist
-		}
-		id = 500 #Horthy Neutral
+	name = "Franz Ferdinand"
+	desc = "POLITICS_FRANZ_FERDINAND_DESC"
+	picture = "Portrait_Austria_Franz_Ferdinand.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
 	}
+}
 	else = {
 		create_country_leader = {
-			name = "Miklós Horthy"
-			desc = "POLITICS_MIKLOS_HORTHY_DESC"
-			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			name = "Franz Ferdinand"
+			desc = "POLITICS_FRANZ_FERDINAND_DESC"
+			picture = "Portrait_Austria_Franz_Ferdinand.dds"
 			expire = "1965.1.1"
-			ideology = despotism
+			ideology = authoritarian
 		}
 		create_country_leader = {
-			name = "Miklós Horthy"
-			desc = "POLITICS_MIKLOS_HORTHY_DESC"
-			picture = "Portrait_Hungary_Miklos_Horthy.dds"
+			name = "Franz Ferdinand"
+			desc = "POLITICS_FRANZ_FERDINAND_DESC"
+			picture = "Portrait_Austria_Franz_Ferdinand.dds"
 			expire = "1965.1.1"
 			ideology = fascism_ideology
 		}
