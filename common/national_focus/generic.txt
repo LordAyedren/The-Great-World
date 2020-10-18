@@ -22,6 +22,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = hightened_conscription_idea
+		}			
 	}
 
 	#Focus for Land Clearence
@@ -312,6 +315,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = for_the_king_idea
+		}			
 	}
 
 	#Focus for Draft New Constitution
@@ -326,6 +332,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas =
+		}			
 	}
 
 	#Focus for Seize the Means of Production
@@ -340,7 +349,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = sieze_the_means_of_production_idea
+		}			
 	}
+
 	#Focus for Military Youth
 	focus = {
 		id = generic_militaryyouth
@@ -383,6 +396,9 @@ focus_tree = {
 		prerequisite = { focus = generic_seizethecrown }
 		ai_will_do = {
 			factor = 1
+		}
+	completion_reward = {	
+		add_ideas = influence_of_king_idea
 		}
 	}
 
@@ -1626,6 +1642,7 @@ focus_tree = {
 			set_politics = { ruling_party = democratic }
 		}
 	}		
+	
 	#Focus for Capitalist Investors
 	focus = {
 		id = generic_capitalistinvestors
@@ -1638,6 +1655,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {	
+			add_ideas = capitalist_investor_idea
+		}		
 	}
 
 	focus = {

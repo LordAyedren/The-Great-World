@@ -1,0 +1,47 @@
+﻿l_english:
+
+ #Generic Ideas
+ gen_industrial_efficiency_idea:0 "Industrial Efficiency"
+ gen_resource_efficiency_idea:0 "Resource Efficiecny"
+ future_proofed_industry_idea:0 "Future Proofed Industry"
+ democratic_idea:0 "Democratic Officials"
+ monarchism_idea:0 "King in the Government"
+ faction_creation_idea:0 "Faction Creation"
+ faction_creation_idea_desc:0 "We may create facitons"
+ capitalist_investor_idea:0 "Capitalist Investors"
+ capitalist_investor_idea_desc:0 "placeholder"
+ influence_of_king_idea:0 "The Influence of a King"
+ influence_of_king_idea_desc:0 "placeholder"
+ for_the_king_idea:0 "For the King!"
+ for_the_king_idea_desc:0 "placeholder"
+ sieze_the_means_of_production_idea:0 "Seize the Means of Production"
+ sieze_the_means_of_production_idea_desc:0 "placeholder"
+ hightened_conscription_idea:0 "Heightened Conscription"
+ hightened_conscription_idea_desc:0 "placeholder"
+
+
+ #Austrian Ideas
+ AUS_great_depression:0 "Ruined Economy"
+ AUS_great_depression_desc:0 "Test"
+ AUS_great_depression_2:0 "Bad Economy"
+ AUS_great_depression_2_desc:0 "Test"
+ AUS_great_depression_3:0 "Poor Economy"
+ AUS_great_depression_3_desc:0 "Test"
+ AUS_economic_growth:0 "Economic Growth"
+ AUS_economic_growth_desc:0 "Test"
+ AUS_ethnic_tension:0 "Ethnic Resistance"
+ AUS_ethnic_tension_desc:0 "Test"
+ AUS_ethnic_tension2:0 "Ethnic Resistance"
+ AUS_ethnic_tension2_desc:0 "Test"
+ AUS_ethnic_tension3:0 "Ethnic Resistance"
+ AUS_ethnic_tension3_desc:0 "Test"
+ AUS_ethnic_domination:0 "Ethnic Domination"
+ AUS_ethnic_domination_desc:0 "Test"
+ AUS_army_corruption_1:0 "Abysmal Army"
+ AUS_army_corruption_1_desc:0 "Test"
+ AUS_army_corruption_2:0 "Poor Army"
+ AUS_army_corruption_2_desc:0 "Test"
+ AUS_army_corruption_3:0 "Expert Army"
+ AUS_army_corruption_3_desc:0 "Test"
+
+

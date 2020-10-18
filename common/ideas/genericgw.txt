@@ -125,3 +125,61 @@ ideas = {
 				can_create_factions = yes
 			}			
 		}
+
+		capitalist_investor_idea = {
+
+			picture = generic_economic_increase
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				political_power_factor = 0.2
+				production_speed_industrial_complex_factor = 0.15	
+
+			}
+		}
+
+		influence_of_king_idea = {
+
+			picture = idea_generic_monarchist_uprising 
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.2
+				generate_wargoal_tension = -0.4
+
+			}
+		}
+
+		for_the_king_idea = {
+
+			picture = GFX_idea_generic_manpower_bonus
+			
+			modifier = {
+				war_support_factor = 0.2
+				conscription = 0.05				
+			}
+		}
+
+		sieze_the_means_of_production_idea = {
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				consumer_goods_factor = -`0.2
+				production_speed_arms_factory_factor = 0.2
+
+			}
+		}
+
+		hightened_conscription_idea = {
+
+			picture = GFX_idea_generic_communist_army
+			
+			modifier = {
+				war_support_factor = 0.1
+				conscription = 0.05				
+			}
+		}		
