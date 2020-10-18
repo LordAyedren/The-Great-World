@@ -683,7 +683,7 @@ focus_tree = {
 		id = ENG_diplomatic_position
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = ENG_stay_with_the_status_quo }
-		x = 6
+		x = 7
 		y = 1
 		relative_position_id = ENG_stay_with_the_status_quo
 		cost = 10
@@ -705,7 +705,7 @@ focus_tree = {
 		icon = GFX_focus_chi_reach_out_to_france
 		prerequisite = { focus = ENG_diplomatic_position }
 		mutually_exclusive = { focus = ENG_form_protection_league }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = ENG_diplomatic_position
 		cost = 10
@@ -955,17 +955,19 @@ focus_tree = {
 			}
 		}
 
-	focus = { id = ENG_antiottoman icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus =ENG_invite_south_america focus =ENG_invite_ire focus =ENG_technology_sharing } 
-		x = -3 
+	focus = { 
+		id = ENG_antiottoman 
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = ENG_press_our_demands } 
+		x = 0 
 		y = 1 
-		relative_position_id =ENG_invite_ire 
+		relative_position_id = ENG_press_our_demands
 		cost = 10
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = -50
 			}
 		}
 
@@ -982,6 +984,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = .15
+			add_political_power = -50			
 			}
 		}
 
@@ -1002,7 +1005,7 @@ focus_tree = {
 		}			
 
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = -50
 			}
 		}	
 
@@ -1024,6 +1027,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = .15
+			add_stability = -0.1
 			}
 		}
 
@@ -1121,39 +1125,7 @@ focus_tree = {
 		completion_reward = {
 			give_guarantee = ALB
 			}
-		}	
-
-	focus = {
-		id = ENG_guerantee_ser
-		icon = GFX_focus_generic_coastal_fort
-		prerequisite = { focus = ENG_protect_balkans }
-		x = -2
-		y = 1
-		relative_position_id = ENG_protect_balkans
-		cost = 3
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			give_guarantee = SER
-			}
-		}	
-
-	focus = {
-		id = ENG_guerantee_rom
-		icon = GFX_focus_generic_coastal_fort
-		prerequisite = { focus = ENG_guerantee_ser }
-		x = 0
-		y = 1
-		relative_position_id = ENG_guerantee_ser
-		cost = 3
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			give_guarantee = ROM
-			}
-		}	
+		}		
 
 	focus = {
 		id = ENG_guerantee_arab
@@ -1277,25 +1249,257 @@ focus_tree = {
 		}	
 
 	focus = {
-		id = ENG_influence_turkish_politics
-		icon = GFX_goal_continuous_def_against_influence
-		prerequisite = { focus = ENG_guerantee_rom focus = ENG_guerantee_alb focus = ENG_guerantee_persia focus = ENG_take_persia focus = ENG_take_balkans_n }
-		x = -2
-		y = 2
-		relative_position_id = ENG_take_arabia
-		cost = 8
+		id = ENG_menace_of_the_med
+		icon = GFX_focus_generic_attack_turkey
+		available = {
+			is_in_faction = yes
+		}	
+		x = 34
+		y = 0
+		cost = 4
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_political_power = 50
-				}
 			}
-		}													
+		}															
 
+	focus = {
+		id = ENG_assess_our_options
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ENG_menace_of_the_med }
+		x = 0
+		y = 1
+		relative_position_id = ENG_menace_of_the_med
+		cost = 4
 
+		available_if_capitulated = yes
 
+		completion_reward = {
+			add_political_power = 50
+		}
+	}															
 
+	focus = {
+		id = ENG_give_them_space
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = ENG_assess_our_options }
+		mutually_exclusive = { focus = ENG_press_our_demands }
+		x = -4
+		y = 1
+		relative_position_id = ENG_assess_our_options
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+		}
+	}	
+
+	focus = {
+		id = ENG_press_our_demands
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = ENG_assess_our_options }
+		mutually_exclusive = { focus = ENG_give_them_space }
+		x = 4
+		y = 1
+		relative_position_id = ENG_assess_our_options
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -50
+		}
+	}	
+
+	focus = {
+		id = ENG_request_an_audience
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = ENG_give_them_space }
+		x = 0
+		y = 1
+		relative_position_id = ENG_give_them_space
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = ENG_begin_talks
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = ENG_request_an_audience }
+		x = 0
+		y = 1
+		relative_position_id = ENG_request_an_audience
+		cost = 20
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}					
+
+	focus = {
+		id = ENG_talks_succeed
+		icon = GFX_focus_generic_befriend_turkey
+		prerequisite = { focus = ENG_begin_talks }
+		x = -1
+		y = 1
+		relative_position_id = ENG_begin_talks
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}	
+
+	focus = {
+		id = ENG_uphold_our_end_of_the_deal
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ENG_talks_succeed }
+		x = 0
+		y = 1
+		relative_position_id = ENG_talks_succeed
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}		
+
+	focus = {
+		id = ENG_write_the_deal_as_a_success
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = ENG_uphold_our_end_of_the_deal }
+		x = 0
+		y = 1
+		relative_position_id = ENG_uphold_our_end_of_the_deal
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = ENG_befriend_the_ottomans
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ENG_uphold_our_end_of_the_deal }
+		x = -2
+		y = 1
+		relative_position_id = ENG_uphold_our_end_of_the_deal
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}				
+
+	focus = {
+		id = ENG_non_agression_ottomans
+		icon = GFX_focus_TUR_pivot_to_the_past
+		prerequisite = { focus = ENG_befriend_the_ottomans }
+		x = 0
+		y = 1
+		relative_position_id = ENG_befriend_the_ottomans
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_the_talks_fail
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ENG_begin_talks }
+		x = 1
+		y = 1
+		relative_position_id = ENG_begin_talks
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_publicly_admit_mistakes
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = ENG_the_talks_fail }
+		x = 0
+		y = 1
+		relative_position_id = ENG_the_talks_fail
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_subsidize_the_people
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = ENG_publicly_admit_mistakes }
+		x = 0
+		y = 1
+		relative_position_id = ENG_publicly_admit_mistakes
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}	
+
+	focus = {
+		id = ENG_fully_recover_from_the_diplomatic_blunder
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = { focus = ENG_subsidize_the_people }
+		x = 0
+		y = 1
+		relative_position_id = ENG_subsidize_the_people
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+		}
+	}		
+
+	focus = {
+		id = ENG_concluded_talks
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ENG_write_the_deal_as_a_success focus = ENG_fully_recover_from_the_diplomatic_blunder }
+		x = 0
+		y = 2
+		relative_position_id = ENG_write_the_deal_as_a_success
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+		}
+	}		
 
 
 									
