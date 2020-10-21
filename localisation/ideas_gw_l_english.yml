@@ -19,7 +19,9 @@
  hightened_conscription_idea:0 "Heightened Conscription"
  hightened_conscription_idea_desc:0 "placeholder"
  draft_new_constitution_idea:0 "Newly Drafted Consitution"
- draft_new_constitution_idea_desc:0 "placeholder" 
+ draft_new_constitution_idea_desc:0 "placeholder"
+ liberty_idea:0 "Liberty" 
+ liberty_idea_desc:0 "placeholder"
 
  #Austrian Ideas
  AUS_great_depression:0 "Ruined Economy"

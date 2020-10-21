@@ -143,7 +143,7 @@ ideas = {
 
 		influence_of_king_idea = {
 
-			picture = GFX_idea_generic_monarchist_uprising 
+			picture = generic_monarchist_uprising 
 			
 			modifier = {
 				stability_factor = 0.1
@@ -155,7 +155,7 @@ ideas = {
 
 		for_the_king_idea = {
 
-			picture = GFX_idea_generic_manpower_bonus
+			picture = generic_manpower_bonus
 			
 			modifier = {
 				war_support_factor = 0.2
@@ -176,7 +176,7 @@ ideas = {
 
 		hightened_conscription_idea = {
 
-			picture = GFX_idea_generic_communist_army
+			picture = generic_communist_army
 			
 			modifier = {
 				war_support_factor = 0.1
@@ -186,7 +186,7 @@ ideas = {
 
 		draft_new_constitution_idea = {
 
-			picture = GFX_idea_hol_the_foundations_of_defense
+			picture = hol_the_foundations_of_defense
 			
 			modifier = {
 				stability_factor = 0.2
