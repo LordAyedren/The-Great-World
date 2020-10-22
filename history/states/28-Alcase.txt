@@ -10,7 +10,7 @@ state={
 	}
 
 	history={
-		owner = FRA
+		owner = GER
 		#victory_points = { 6529 1 }
 		#victory_points = { 549 1 }
 		victory_points = { 678 5 }
@@ -52,6 +52,7 @@ state={
 
 		}
 		add_core_of = FRA
+		add_core_of = GER
 		1939.1.1 = {
 			buildings = {
 				industrial_complex = 4
