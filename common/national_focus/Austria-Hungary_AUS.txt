@@ -1,0 +1,1919 @@
+focus_tree = {
+	id = HUN
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = HUN
+		}
+	}
+
+	#Focus for Land Redistribution
+	focus = {
+		id = Austria-Hungary_land_redistribution
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_ferdinands_dream }
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension add_idea = AUS_ethnic_tension2 }
+		}
+	}
+
+
+	#Focus for Public Schools
+	focus = {
+		id = Austria-Hungary_public_schools
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 25
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_careful_tariffs 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_provide_state_jobs 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ 	remove_idea = AUS_great_depression_2 
+	add_idea = AUS_great_depression_3 
+			}
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Provide State Jobs
+	focus = {
+		id = Austria-Hungary_provide_state_jobs
+		icon = GFX_goal_generic_construct_civilian
+		x = 26
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_subsidize_the_economy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for A Step Back
+	focus = {
+		id = Austria-Hungary_a_step_back
+		icon = GFX_goal_tripartite_pact
+		x = 25
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 120
+		}
+	}
+
+	#Focus for Medium Factory Construction
+	focus = {
+		id = Austria-Hungary_medium_factory_construction
+		icon = GFX_focus_generic_industry_2
+		x = 26
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_light_factory_construction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 2
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Land Focus
+	focus = {
+		id = Austria-Hungary_land_focus
+		icon = GFX_goal_generic_air_bomber
+		x = 38
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_air_effort }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience= 10
+		}
+	}
+
+	#Focus for German Military Officers
+	focus = {
+		id = Austria-Hungary_german_military_officers
+		icon = GFX_focus_ger_oppose_hitler
+		x = 7
+		y = 0
+		cost = 3
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = Austria-Hungary_british_military_officers }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government= democratic
+		}
+		available = {
+			has_idea= GER_revive_the_kaiserreich
+		}
+		completion_reward = {
+			army_experience= 25
+		}
+	}
+
+	#Focus for Rebuilding Far-Right Support
+	focus = {
+		id = Austria-Hungary_rebuilding_farright_support
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 3
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_kaiserreich }
+		mutually_exclusive = { focus = Austria-Hungary_ferdinands_dream }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = nationalism
+				days = 720
+			}
+		}
+	}
+
+	#Focus for Heavy Factory Construction
+	focus = {
+		id = Austria-Hungary_heavy_factory_construction
+		icon = GFX_focus_generic_industry_3
+		x = 26
+		y = 8
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_medium_factory_construction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 4
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for People's Front
+	focus = {
+		id = Austria-Hungary_peoples_front
+		icon = GFX_goal_support_democracy
+		x = 27
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_a_step_back }
+		mutually_exclusive = { focus = Austria-Hungary_kaiserreich }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = democratic_idea
+				days = 720
+			}
+			add_popularity= { 
+			ideology = democratic 
+			popularity = 0.1 
+			}		
+			set_politics = { ruling_party = democratic }
+		}
+	}
+
+	#Focus for Equipment Focus
+	focus = {
+		id = Austria-Hungary_equipment_focus
+		icon = GFX_goal_generic_small_arms
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_instill_discipline }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 4 
+category = infantry_weapons
+category = artillery
+}
+		}
+	}
+
+	#Focus for Kaiserreich
+	focus = {
+		id = Austria-Hungary_kaiserreich
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 23
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_a_step_back }
+		mutually_exclusive = { focus = Austria-Hungary_peoples_front }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GER_revive_the_kaiserreich
+				days = 360
+			}
+		}
+	}
+
+	#Focus for Benefits For German Speakers
+	focus = {
+		id = Austria-Hungary_benefits_for_german_speakers
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_the_republican_deal }
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Ethnic Assimilation
+	focus = {
+		id = Austria-Hungary_ethnic_assimilation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_benefits_for_german_speakers 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_religious_tolerance 
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension3 add_idea = AUS_ethnic_domination }
+		}
+	}
+
+	#Focus for Religious Tolerance
+	focus = {
+		id = Austria-Hungary_religious_tolerance
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 20
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_the_republican_deal }
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for The Republican Deal
+	focus = {
+		id = Austria-Hungary_the_republican_deal
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_freedom_of_press 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_rewrite_the_constitution 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_teaching_german 
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension2 add_idea = AUS_ethnic_tension3 }
+		}
+	}
+
+	#Focus for Freedom of Press
+	focus = {
+		id = Austria-Hungary_freedom_of_press
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_land_redistribution }
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Teaching German
+	focus = {
+		id = Austria-Hungary_teaching_german
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 21
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_land_redistribution }
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for Rewrite The Constitution
+	focus = {
+		id = Austria-Hungary_rewrite_the_constitution
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_land_redistribution }
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Careful Tariffs
+	focus = {
+		id = Austria-Hungary_careful_tariffs
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 24
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_subsidize_the_economy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+
+	#Focus for Subsidize The Economy
+	focus = {
+		id = Austria-Hungary_subsidize_the_economy
+		icon = GFX_focus_mex_privatisation
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_new_economic_policies }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = AUS_great_depression 
+add_idea = AUS_great_depression_2  
+}
+		}
+	}
+
+	#Focus for New Economic Policies
+	focus = {
+		id = Austria-Hungary_new_economic_policies
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 25
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_kaiserreich 
+			focus = Austria-Hungary_peoples_front 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 120
+		}
+	}
+
+	#Focus for Light Factory Construction
+	focus = {
+		id = Austria-Hungary_light_factory_construction
+		icon = GFX_focus_generic_industry_1
+		x = 26
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_public_schools }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Light Military Industry
+	focus = {
+		id = Austria-Hungary_light_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 24
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_public_schools }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Medium Military Industry
+	focus = {
+		id = Austria-Hungary_medium_military_industry
+		icon = GFX_goal_generic_occupy_start_war
+		x = 24
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_light_military_industry }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 2
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Heavy Military Industry
+	focus = {
+		id = Austria-Hungary_heavy_military_industry
+		icon = GFX_goal_generic_army_artillery2
+		x = 24
+		y = 8
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_medium_military_industry }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 4
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Air Fields
+	focus = {
+		id = Austria-Hungary_air_fields
+		icon = GFX_goal_generic_build_airforce
+		x = 28
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_public_schools }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = air_base
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = air_base
+ level = 2
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Naval Dockyards
+	focus = {
+		id = Austria-Hungary_naval_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 22
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_public_schools }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = dockyard
+ level = 4
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Specialized Jobs
+	focus = {
+		id = Austria-Hungary_specialized_jobs
+		icon = GFX_goal_continuous_non_factory_construct
+		x = 25
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_naval_dockyards 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_heavy_factory_construction 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_air_fields 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_heavy_military_industry 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = AUS_great_depression_3 
+add_idea = AUS_economic_growth
+}
+		}
+	}
+
+	#Focus for Military Police
+	focus = {
+		id = Austria-Hungary_military_police
+		icon = GFX_focus_secret_rearmament
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_rebuilding_farright_support }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension add_idea = AUS_ethnic_tension2 }
+		}
+	}
+
+	#Focus for Creating A Secret Police
+	focus = {
+		id = Austria-Hungary_creating_a_secret_police
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_rebuilding_farright_support }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = -0.05
+		}
+	}
+
+	#Focus for Doctrinal Revision
+	focus = {
+		id = Austria-Hungary_doctrinal_revision
+		icon = GFX_goal_generic_position_armies
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_instill_discipline }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 1.0 
+uses = 3 
+category = land_doctrine
+}
+		}
+	}
+
+	#Focus for Convert The Balkans
+	focus = {
+		id = Austria-Hungary_convert_the_balkans
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 13
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_military_police }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension2 add_idea = AUS_ethnic_tension3 }
+		}
+	}
+
+	#Focus for End The Dual-Monarchy
+	focus = {
+		id = Austria-Hungary_end_the_dualmonarchy
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 15
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_creating_a_secret_police }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = fascism 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for One Nation One Language
+	focus = {
+		id = Austria-Hungary_one_nation_one_language
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_convert_the_balkans 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_end_the_dualmonarchy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = AUS_ethnic_tension3 add_idea = AUS_ethnic_domination }
+		}
+	}
+
+	#Focus for Artillery Focus
+	focus = {
+		id = Austria-Hungary_artillery_focus
+		icon = GFX_goal_generic_army_artillery2
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_equipment_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 1.0 
+uses = 2 
+category = artillery 
+}
+		}
+	}
+
+	#Focus for Doctrine Expansion
+	focus = {
+		id = Austria-Hungary_doctrine_expansion
+		icon = GFX_goal_generic_air_doctrine
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_doctrinal_revision }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = land_doctrine 
+}
+		}
+	}
+
+	#Focus for Tank Investment
+	focus = {
+		id = Austria-Hungary_tank_investment
+		icon = GFX_goal_generic_army_tanks
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_instill_discipline }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = ROM_the_armored_division_tt
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = basic_medium_tank
+						has_tech = tech_recon
+					}
+					division_template = {
+						name = "Armored Division"
+						priority = 2
+						division_names_group = ROM_ARM_01
+						regiments = {
+							medium_armor = { x = 0 y = 0 }
+							medium_armor = { x = 0 y = 1 }
+				
+		    	   		 	medium_armor = { x = 1 y = 0 }
+							medium_armor = { x = 1 y = 1 }
+				
+		    	   		 	motorized = { x = 2 y = 0 }
+							motorized = { x = 2 y = 1 }
+
+		    	   		 	motorized = { x = 3 y = 0 }
+							motorized = { x = 3 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+							recon = { x = 0 y = 2 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_tech = basic_medium_tank
+							}
+							division_template = {
+								name = "Armored Division"
+								priority = 2
+								division_names_group = ROM_ARM_01
+								regiments = {
+									medium_armor = { x = 0 y = 0 }
+									medium_armor = { x = 0 y = 1 }
+						
+				    	   		 	medium_armor = { x = 1 y = 0 }
+									medium_armor = { x = 1 y = 1 }
+						
+				    	   		 	motorized = { x = 2 y = 0 }
+									motorized = { x = 2 y = 1 }
+
+				    	   		 	motorized = { x = 3 y = 0 }
+									motorized = { x = 3 y = 1 }
+								}
+								support = {
+									engineer = { x = 0 y = 0 }
+									artillery = { x = 0 y = 1 }
+									recon = { x = 0 y = 2 }
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										has_tech = tech_recon
+									}
+									division_template = {
+										name = "Armored Division"
+										priority = 2
+										division_names_group = ROM_ARM_01
+										regiments = {
+											light_armor = { x = 0 y = 0 }
+											light_armor = { x = 0 y = 1 }
+								
+						    	   		 	light_armor = { x = 1 y = 0 }
+											light_armor = { x = 1 y = 1 }
+								
+						    	   		 	motorized = { x = 2 y = 0 }
+											motorized = { x = 2 y = 1 }
+
+						    	   		 	motorized = { x = 3 y = 0 }
+											motorized = { x = 3 y = 1 }
+										}
+										support = {
+											engineer = { x = 0 y = 0 }
+											artillery = { x = 0 y = 1 }
+											recon = { x = 0 y = 2 }
+										}
+									}
+									else = {
+										division_template = {
+											name = "Armored Division"
+											priority = 2
+											division_names_group = ROM_ARM_01
+											regiments = {
+												light_armor = { x = 0 y = 0 }
+												light_armor = { x = 0 y = 1 }
+									
+							    	   		 	light_armor = { x = 1 y = 0 }
+												light_armor = { x = 1 y = 1 }
+									
+							    	   		 	motorized = { x = 2 y = 0 }
+												motorized = { x = 2 y = 1 }
+
+							    	   		 	motorized = { x = 3 y = 0 }
+												motorized = { x = 3 y = 1 }
+											}
+											support = {
+												engineer = { x = 0 y = 0 }
+												artillery = { x = 0 y = 1 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 46 }
+					create_unit = {
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 0.7" 
+						owner = ROM
+					}
+				}
+			}
+		}
+	}
+
+	#Focus for Instill Discipline
+	focus = {
+		id = Austria-Hungary_instill_discipline
+		icon = GFX_focus_generic_little_entente
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_standardize_uniforms }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support= 0.2
+		}
+	}
+
+	#Focus for Standardize Uniforms
+	focus = {
+		id = Austria-Hungary_standardize_uniforms
+		icon = GFX_goal_rhineland
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_german_military_officers 
+			focus = Austria-Hungary_british_military_officers 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = AUS_army_corruption_1
+add_idea = AUS_army_corruption_2 
+}
+		}
+	}
+
+	#Focus for British Military Officers
+	focus = {
+		id = Austria-Hungary_british_military_officers
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 9
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = Austria-Hungary_german_military_officers }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= democratic
+		}
+		completion_reward = {
+			army_experience= 25
+		}
+	}
+
+	#Focus for Balkan Sentinel
+	focus = {
+		id = Austria-Hungary_balkan_sentinel
+		icon = GFX_goal_generic_wolf_pack
+		x = 33
+		y = 6
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_a_balkan_coalition }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support= 0.50
+		}
+	}
+
+	#Focus for Join The Entente
+	focus = {
+		id = Austria-Hungary_join_the_entente
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 29
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_peace_in_the_balkans }
+		mutually_exclusive = { focus = Austria-Hungary_a_balkan_coalition }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_puppet = no
+			has_government = democratic
+			FRA = {
+				exists = yes
+			}
+			NOT = { has_war_with = FRA }
+		}
+		completion_reward = {
+			FRA = { country_event = { id = genericfocus.1 } }
+		}
+	}
+
+	#Focus for We Make Ready For War
+	focus = {
+		id = Austria-Hungary_we_make_ready_for_war
+		icon = GFX_goal_generic_territory_or_war
+		x = 8
+		y = 5
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_artillery_focus 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_doctrine_expansion 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_mechanized_warfare 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = AUS_army_corruption_2
+add_idea = AUS_army_corruption_3
+}
+		}
+	}
+
+	#Focus for Mechanized Warfare
+	focus = {
+		id = Austria-Hungary_mechanized_warfare
+		icon = GFX_focus_generic_tank_production
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_tank_investment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = motorized_equipment
+category = armor
+category = motorised_infantry
+}
+	}
+		}
+
+	#Focus for Air Field Construction
+	focus = {
+		id = Austria-Hungary_air_field_construction
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 37
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_land_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = air_base
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = air_base
+ level = 4
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Social Concessions
+	focus = {
+		id = Austria-Hungary_social_concessions
+		icon = GFX_goal_generic_major_alliance
+		x = 31
+		y = 2
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_peoples_front }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Kaiser Military Youth
+	focus = {
+		id = Austria-Hungary_kaiser_military_youth
+		icon = GFX_focus_generic_military_academy
+		x = 5
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_german_military_officers }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= military_youth_focus
+		}
+	}
+
+	#Focus for Occupy Belgrade
+	focus = {
+		id = Austria-Hungary_occupy_belgrade
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_we_make_ready_for_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_claim= 90
+
+create_wargoal
+= { type = annex_everything target = SER }
+		}
+	}
+
+	#Focus for Seize Our Russian Land
+	focus = {
+		id = Austria-Hungary_seize_our_russian_land
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_we_make_ready_for_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_claim= 92
+			add_state_claim= 93
+			add_state_claim= 199
+		}
+	}
+
+	#Focus for Consolidation
+	focus = {
+		id = Austria-Hungary_consolidation
+		icon = GFX_goal_generic_national_unity
+		x = 8
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_take_romanian_claims 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_occupy_belgrade 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_seize_our_russian_land 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_reclaim_veneto 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Fighter Focus
+	focus = {
+		id = Austria-Hungary_fighter_focus
+		icon = GFX_goal_generic_air_fighter2
+		x = 36
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_air_field_construction 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_local_development 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	#Focus for CAS Focus
+	focus = {
+		id = Austria-Hungary_cas_focus
+		icon = GFX_goal_generic_air_fighter2
+		x = 38
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_air_field_construction 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_local_development 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 1.0 
+uses = 1
+category = cas_bomber
+}
+		}
+	}
+
+	#Focus for Bomber Focus
+	focus = {
+		id = Austria-Hungary_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		x = 40
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_local_development 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_air_field_construction 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+
+	#Focus for Reclaim Veneto
+	focus = {
+		id = Austria-Hungary_reclaim_veneto
+		icon = GFX_focus_attack_italy
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_we_make_ready_for_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything
+target = ITA
+}
+		}
+	}
+
+	#Focus for Take Romanian Claims
+	focus = {
+		id = Austria-Hungary_take_romanian_claims
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_we_make_ready_for_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_claim= 79
+add_state_claim= 78
+add_state_claim= 766
+		}
+	}
+
+	#Focus for Proclaim Greater Austria
+	focus = {
+		id = Austria-Hungary_proclaim_greater_austria
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 15
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_consolidation
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_specialized_jobs
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_one_nation_one_language
+			focus = Austria-Hungary_ethnic_assimilation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Protect Albania
+	focus = {
+		id = Austria-Hungary_protect_albania
+		icon = GFX_goal_generic_defence
+		x = 32
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_balkan_sentinel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee= ALB
+		}
+	}
+
+	#Focus for Protect Bulgaria
+	focus = {
+		id = Austria-Hungary_protect_bulgaria
+		icon = GFX_goal_generic_defence
+		x = 34
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_balkan_sentinel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee= BUL
+		}
+	}
+
+	#Focus for Peace In The Balkans
+	focus = {
+		id = Austria-Hungary_peace_in_the_balkans
+		icon = GFX_goal_continuous_boost_freedom
+		x = 31
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_the_illyrian_agreement 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_return_polish_land 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_the_hungarian_concordant 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas= AUS_ethnic_tension
+		}
+	}
+
+	#Focus for Protect Serbia
+	focus = {
+		id = Austria-Hungary_protect_serbia
+		icon = GFX_goal_generic_defence
+		x = 31
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_balkan_sentinel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee= SER
+		}
+	}
+
+	#Focus for Protect Greece
+	focus = {
+		id = Austria-Hungary_protect_greece
+		icon = GFX_goal_generic_defence
+		x = 33
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_balkan_sentinel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee= GRE
+		}
+	}
+
+	#Focus for Protect Romania
+	focus = {
+		id = Austria-Hungary_protect_romania
+		icon = GFX_goal_generic_defence
+		x = 35
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_balkan_sentinel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee= ROM
+		}
+	}
+
+	#Focus for Return Polish Land
+	focus = {
+		id = Austria-Hungary_return_polish_land
+		icon = GFX_focus_generic_polish_deal
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_social_concessions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_state = { 
+    limit = { is_owned_by = AUS  is_core_of = POL }
+    AUS = { transfer_state = PREV }
+}
+		}
+	}
+
+	#Focus for The Hungarian Concordant
+	focus = {
+		id = Austria-Hungary_the_hungarian_concordant
+		icon = GFX_focus_generic_home_defense
+		x = 33
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_social_concessions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			release_puppet= HUN
+		}
+	}
+
+	#Focus for The Illyrian Agreement
+	focus = {
+		id = Austria-Hungary_the_illyrian_agreement
+		icon = GFX_focus_YUG_banovina_of_croatia
+		x = 29
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_social_concessions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			release_puppet= CRO
+		}
+	}
+
+	#Focus for Submarine Effort
+	focus = {
+		id = Austria-Hungary_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		x = 49
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_light_ship }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = ss_tech 
+}
+		}
+	}
+
+	#Focus for Light Ship
+	focus = {
+		id = Austria-Hungary_light_ship
+		icon = GFX_focus_generic_destroyer
+		x = 49
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_naval_effort }
+		mutually_exclusive = { focus = Austria-Hungary_capital_ships }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = dd_tech 
+}
+		}
+	}
+
+	#Focus for Naval Bombers
+	focus = {
+		id = Austria-Hungary_naval_bombers
+		icon = GFX_focus_usa_escort_fighters
+		x = 43
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_carrier_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = naval_bomber
+}
+		}
+	}
+
+	#Focus for Cruiser Focus
+	focus = {
+		id = Austria-Hungary_cruiser_focus
+		icon = GFX_focus_generic_cruiser2
+		x = 46
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_capital_ships }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = cl_tech 
+}
+		}
+	}
+
+	#Focus for Carrier Focus
+	focus = {
+		id = Austria-Hungary_carrier_focus
+		icon = GFX_goal_generic_navy_carrier
+		x = 43
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_sea_focus 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_capital_ships 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = cv_tech 
+}
+		}
+	}
+
+	#Focus for Naval Effort
+	focus = {
+		id = Austria-Hungary_naval_effort
+		icon = GFX_goal_generic_navy_cruiser
+		x = 47
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience= 10
+		}
+	}
+
+	#Focus for Capital Ships
+	focus = {
+		id = Austria-Hungary_capital_ships
+		icon = GFX_goal_generic_navy_battleship
+		x = 45
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_naval_effort }
+		mutually_exclusive = { focus = Austria-Hungary_light_ship }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 1.0
+uses = 2 
+category = bb_tech 
+category = bc_tech 
+}
+		}
+	}
+
+	#Focus for Battlefield Support
+	focus = {
+		id = Austria-Hungary_battlefield_support
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 38
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Austria-Hungary_fighter_focus 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_cas_focus 
+		}
+		prerequisite = { 
+			focus = Austria-Hungary_bomber_focus 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 1.0 
+uses = 2 
+category = battlefield_support_tree
+}
+		}
+	}
+
+	#Focus for Air Effort
+	focus = {
+		id = Austria-Hungary_air_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 40
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience= 25
+		}
+	}
+
+	#Focus for Volunteer Brigades
+	focus = {
+		id = Austria-Hungary_volunteer_brigades
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_british_military_officers }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+
+	#Focus for Local Development
+	focus = {
+		id = Austria-Hungary_local_development
+		icon = GFX_goal_generic_air_production
+		x = 39
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_land_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= ROM_local_development
+		}
+	}
+
+	#Focus for Sea Focus
+	focus = {
+		id = Austria-Hungary_sea_focus
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 43
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_air_effort }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience= 25
+		}
+	}
+
+	#Focus for Rocketry
+	focus = {
+		id = Austria-Hungary_rocketry
+		icon = GFX_focus_rocketry
+		x = 38
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_battlefield_support }
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+	}
+
+	#Focus for Ferdinand's Dream
+	focus = {
+		id = Austria-Hungary_ferdinands_dream
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_kaiserreich }
+		mutually_exclusive = { focus = Austria-Hungary_rebuilding_farright_support }
+	}
+
+	#Focus for A Balkan Coalition
+	focus = {
+		id = Austria-Hungary_a_balkan_coalition
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 33
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Austria-Hungary_peace_in_the_balkans }
+		mutually_exclusive = { focus = Austria-Hungary_join_the_entente }
+		completion_reward = {
+			create_faction= 'Danubian Coalition'
+		}
+	}
+
+#End of focuses 
+ }
