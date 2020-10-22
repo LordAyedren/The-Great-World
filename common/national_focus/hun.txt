@@ -1726,18 +1726,17 @@ category = battlefield_support_tree
 		}
 	}
 
-#Focus for Rocketry
-	focus = {
-		id = Austria-Hungary_rocketry
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 38
-		y = 5
+focus = {
+		id = Austria-Hungary_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = Austria-Hungary_battlefieldsupport }
+		x = 0
+		y = 1
+		relative_position_id = Austria-Hungary_battlefieldsupport
 		cost = 10
+
 		available_if_capitulated = yes
-		prerequisite = { focus = Austria-Hungary_battlefield_support }
-		ai_will_do = {
-			factor = 1
-		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = jet_rocket_bonus
@@ -1746,56 +1745,6 @@ category = battlefield_support_tree
 				category = rocketry
 				category = jet_technology
 			}
-		}
-	}
-
-	#Focus for Ferdinand's Dream
-	focus = {
-		id = Austria-Hungary_ferdinands_dream
-		icon = GFX_focus_BUL_free_balkan_states
-		x = 19
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = Austria-Hungary_kaiserreich }
-		mutually_exclusive = { focus = Austria-Hungary_rebuilding_farright_support }
-		ai_will_do = {
-			factor = 80
-		}
-	}
-
-	#Focus for A Balkan Coalition
-	focus = {
-		id = Austria-Hungary_a_balkan_coalition
-		icon = GFX_focus_YUG_dissolve_serbia
-		x = 33
-		y = 5
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = Austria-Hungary_peace_in_the_balkans }
-		mutually_exclusive = { focus = Austria-Hungary_join_the_entente }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_faction= 'Danubian Coalition'
-		}
-	}
-
-	#Focus for Land Redistribution
-	focus = {
-		id = Austria-Hungary_land_redistribution
-		icon = GFX_goal_generic_position_armies
-		x = 19
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = Austria-Hungary_ferdinands_dream }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = { remove_idea = AUS_ethnic_tension add_idea = AUS_ethnic_tension2 }
 		}
 	}
 

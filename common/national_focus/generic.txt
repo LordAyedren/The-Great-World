@@ -333,7 +333,8 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas =
+			add_ideas = draft_new_constitution_idea			
+			add_political_power = 150
 		}			
 	}
 
@@ -1454,7 +1455,7 @@ focus_tree = {
 			GER = {	
 				exists = yes	
 			}	
-			NOT = { has_war_with = GER }	
+			NOT = { has_war_with = GER }
 		}			
 		x = 13
 		y = 7
