@@ -168,7 +168,7 @@ ideas = {
 			picture = generic_production_bonus
 			
 			modifier = {
-				consumer_goods_factor = -0.2
+				consumer_goods_factor = -`0.2
 				production_speed_arms_factory_factor = 0.2
 
 			}
@@ -182,6 +182,7 @@ ideas = {
 				war_support_factor = 0.1
 				conscription = 0.05				
 			}
+<<<<<<< Updated upstream
 		}
 
 		draft_new_constitution_idea = {
@@ -209,3 +210,6 @@ ideas = {
 				neutrality_drift = -0.05
 			}
 		}
+=======
+		}		
+>>>>>>> Stashed changes
