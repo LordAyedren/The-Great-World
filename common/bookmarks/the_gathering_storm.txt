@@ -99,7 +99,7 @@ bookmarks = {
 		}
 
 
-        "AUS"={
+        "HUN"={
 			history = "AUS_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
